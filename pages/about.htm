@@ -1,0 +1,75 @@
+url = "/about"
+layout = "default"
+title = "About"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[siteSearchInclude]
+
+[jumbotron objectives]
+jumbotron = "objectives"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron background]
+jumbotron = "background"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron vision]
+jumbotron = "vision"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron objectives]
+jumbotron = "objectives"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[accordion work-packages]
+maxItems = 20
+accordion = 1
+elementId = "id"
+active = 0
+collapsible = "false"
+heightStyle = "content"
+iconsHeader = "ui-icon-plus"
+iconsHeaderActive = "ui-icon-minus"
+templates = "template5"
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+<!-- Background -->
+<div class="container">
+    {% component 'background' %}
+</div>
+
+<!-- Vision -->
+<div class="container"">
+    {% component 'vision' %}
+</div>
+
+<!-- Objectives -->
+<div class="container-fluid secondary_background">
+    <div class="container">
+        {% component 'objectives' %}
+    </div>
+</div>
+
+<!-- Work packages -->
+<div class="container-fluid">
+    <div class="container work_packages">
+        <h1 class="section-title">Work Packages</h1>
+        {% component 'work-packages' %}
+    </div>
+</div>

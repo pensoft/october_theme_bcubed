@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72.5" height="57.768" viewBox="0 0 72.5 57.768">
+  <g id="Group_17325" data-name="Group 17325" transform="translate(-1083 -671.5)">
+    <path id="Icon_material-location-on" data-name="Icon material-location-on" d="M18,3A10.492,10.492,0,0,0,7.5,13.5C7.5,21.375,18,33,18,33S28.5,21.375,28.5,13.5A10.492,10.492,0,0,0,18,3Zm0,14.25a3.75,3.75,0,1,1,3.75-3.75A3.751,3.751,0,0,1,18,17.25Z" transform="translate(1087.5 670)" fill="none" stroke="#6cddb4" stroke-width="3"/>
+    <path id="Icon_material-location-on-2" data-name="Icon material-location-on" d="M18,3A10.492,10.492,0,0,0,7.5,13.5C7.5,21.375,18,33,18,33S28.5,21.375,28.5,13.5A10.492,10.492,0,0,0,18,3Zm0,14.25a3.75,3.75,0,1,1,3.75-3.75A3.751,3.751,0,0,1,18,17.25Z" transform="translate(1125.5 682.967)" fill="none" stroke="#6cddb4" stroke-width="3"/>
+    <line id="Line_67" data-name="Line 67" x2="16" transform="translate(1097.5 706.867)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_69" data-name="Line 69" x2="43" transform="translate(1084.5 715.867)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_70" data-name="Line 70" x2="43" transform="translate(1109 727.768)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_68" data-name="Line 68" x2="16" transform="translate(1135.5 719.834)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

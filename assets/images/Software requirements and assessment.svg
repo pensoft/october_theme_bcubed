@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="56.5" viewBox="0 0 65 56.5">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3799" data-name="Rectangle 3799" width="31.3" height="19.978" transform="translate(-6 -4)" fill="none" stroke="#6cddb4" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="Group_17388" data-name="Group 17388" transform="translate(-261 -539.25)">
+    <g id="Group_17359" data-name="Group 17359" transform="translate(-390 -1684.25)">
+      <rect id="Rectangle_3741" data-name="Rectangle 3741" width="62" height="44" rx="2" transform="translate(652.5 2225)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_15885" data-name="Group 15885" transform="translate(0.5 6)">
+        <line id="Line_44" data-name="Line 44" y2="9" transform="translate(682.5 2263.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+        <line id="Line_45" data-name="Line 45" x2="16" transform="translate(674.5 2272.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="Group_17360" data-name="Group 17360" transform="translate(283.85 547.673)">
+      <g id="Group_17354" data-name="Group 17354" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Path_27220" data-name="Path 27220" d="M0,5.927H0a.839.839,0,0,1,.431-.734L5.092,2.6A.755.755,0,1,1,5.8,3.932L1.92,5.907l3.935,1.9a.753.753,0,1,1-.678,1.344L.449,6.67A.839.839,0,0,1,0,5.927" transform="translate(-1.991 -0.891)" fill="none" stroke="#6cddb4" stroke-width="1.5"/>
+        <path id="Path_27221" data-name="Path 27221" d="M16.678.076h0a.792.792,0,0,1,.375,1.061l-4.544,9.393a.793.793,0,0,1-1.427-.69L15.627.448A.792.792,0,0,1,16.678.076" transform="translate(-3.917 0)" fill="none" stroke="#6cddb4" stroke-width="1.5"/>
+        <path id="Path_27222" data-name="Path 27222" d="M28.046,5.792h0a.839.839,0,0,1-.432.734l-4.667,2.6a.761.761,0,1,1-.715-1.343L26.125,5.8,22.182,3.89a.749.749,0,1,1,.676-1.338l4.741,2.5a.841.841,0,0,1,.448.743" transform="translate(-5.745 -0.878)" fill="none" stroke="#6cddb4" stroke-width="1.5"/>
+      </g>
+    </g>
+    <line id="Line_88" data-name="Line 88" x2="25.646" transform="translate(289.723 565.826)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_89" data-name="Line 89" x2="25.383" transform="translate(289.985 574.326)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <path id="Icon_feather-check" data-name="Icon feather-check" d="M15.254,9,8.892,16.481,6,13.081" transform="translate(265.941 556.826)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>

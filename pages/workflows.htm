@@ -1,0 +1,39 @@
+url = "/workflows"
+layout = "default"
+title = "Workflows"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+header_image = "about.jpg"
+
+[jumbotron workflows-intro]
+jumbotron = "workflows-intro"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron workflows-cubes]
+jumbotron = "workflows-cubes"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+<!-- Intro -->
+{% component 'workflows-intro' %}
+
+<!-- Cubes -->
+{% component 'workflows-cubes' %}
+
+<script>
+    $(document).ready(function() {
+        $('.text').click(function() {
+            $(this).toggleClass('clicked');
+            $(this).next('.hidden-text').toggleClass('show-hidden-text');
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="56.5" viewBox="0 0 65 56.5">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3799" data-name="Rectangle 3799" width="40.601" height="21.956" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_17397" data-name="Group 17397" transform="translate(-1042 -539.75)">
+    <g id="Group_17353" data-name="Group 17353" transform="translate(391 -1683.75)">
+      <rect id="Rectangle_3741" data-name="Rectangle 3741" width="62" height="44" rx="2" transform="translate(652.5 2225)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_15885" data-name="Group 15885" transform="translate(0.5 6)">
+        <line id="Line_44" data-name="Line 44" y2="9" transform="translate(682.5 2263.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+        <line id="Line_45" data-name="Line 45" x2="16" transform="translate(674.5 2272.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="Group_17355" data-name="Group 17355" transform="translate(1054.2 553)">
+      <g id="Group_17354" data-name="Group 17354" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Path_27220" data-name="Path 27220" d="M0,9.35H0A1.678,1.678,0,0,1,.863,7.883l9.32-5.188A1.511,1.511,0,1,1,11.6,5.361L3.841,9.31l7.87,3.809a1.506,1.506,0,1,1-1.356,2.688L.9,10.836A1.678,1.678,0,0,1,0,9.35" transform="translate(0 0.721)" fill="#6cddb4"/>
+        <path id="Path_27221" data-name="Path 27221" d="M22.352.152h0A1.584,1.584,0,0,1,23.1,2.275L14.016,21.061a1.585,1.585,0,0,1-2.854-1.379L20.25.9a1.584,1.584,0,0,1,2.1-.743" transform="translate(3.169 0)" fill="#6cddb4"/>
+        <path id="Path_27222" data-name="Path 27222" d="M34.333,9.118h0a1.678,1.678,0,0,1-.863,1.467l-9.334,5.193a1.521,1.521,0,1,1-1.43-2.686l7.786-3.961L22.605,5.314a1.5,1.5,0,1,1,1.351-2.675l9.481,4.992a1.682,1.682,0,0,1,.9,1.486" transform="translate(6.268 0.71)" fill="#6cddb4"/>
+      </g>
+    </g>
+  </g>
+</svg>

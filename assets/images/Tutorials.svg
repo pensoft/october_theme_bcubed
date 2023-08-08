@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="60.184" viewBox="0 0 65 60.184">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3740" data-name="Rectangle 3740" width="36.261" height="31.867" transform="translate(-10 -5)" fill="none" stroke="#6cddb4" stroke-width="3"/>
+    </clipPath>
+  </defs>
+  <g id="Group_17389" data-name="Group 17389" transform="translate(-456 -876.75)">
+    <g id="Group_17356" data-name="Group 17356" transform="translate(-195 -1346.75)">
+      <rect id="Rectangle_3741" data-name="Rectangle 3741" width="62" height="44" rx="2" transform="translate(652.5 2225)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_15885" data-name="Group 15885" transform="translate(0.5 6)">
+        <line id="Line_44" data-name="Line 44" y2="9" transform="translate(682.5 2263.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+        <line id="Line_45" data-name="Line 45" x2="16" transform="translate(674.5 2272.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="Ellipse_29" data-name="Ellipse 29" transform="translate(469.5 890.066)" fill="none" stroke="#6cddb4" stroke-width="3">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="7" fill="none"/>
+    </g>
+    <g id="Group_15881" data-name="Group 15881" transform="translate(469.5 912.572)">
+      <g id="Group_15877" data-name="Group 15877" transform="translate(-2 -2.506)" clip-path="url(#clip-path)">
+        <path id="Path_27199" data-name="Path 27199" d="M.5,11.778V9.947A9.447,9.447,0,0,1,9.947.5h0A9.447,9.447,0,0,1,19.4,9.947v1.831" transform="translate(0.896 0.469)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="3"/>
+      </g>
+    </g>
+    <line id="Line_84" data-name="Line 84" x2="15" transform="translate(495.238 890.066)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_85" data-name="Line 85" x2="15" transform="translate(495.238 898.566)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_86" data-name="Line 86" x2="15" transform="translate(495.238 907.066)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

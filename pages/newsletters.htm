@@ -1,0 +1,92 @@
+url = "/newsletters"
+layout = "default"
+title = "Newsletters"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+header_image = "about.jpg"
+
+[builderList mediaNewsletterList]
+modelClass = "pensoft\Media\Models\Newsletters"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?php
+use Pensoft\Media\Models\Newsletters;
+use System\Models\File;
+
+function onStart(){
+	$this['newsletters'] =  Newsletters::get();
+	if(get('download')){
+		$file = File::find((int)get('download'));
+		$file_name = $file->getLocalPath();
+$recordName = get('file_name') ? get('file_name') : 'TRANSPATH_newsletter';
+$ext= $file->getExtension();
+
+if (file_exists($file_name)) {
+header('Content-Description: File Transfer');
+header('Content-Type: application/octet-stream');
+header("Content-Type: application/force-download");
+header('Content-Disposition: attachment; filename='.$recordName .'.'. $ext);
+header('Content-Transfer-Encoding: binary');
+header('Expires: 0');
+header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+header('Pragma: public');
+header('Content-Length: ' . filesize($file_name));
+ob_clean();
+flush();
+readfile($file_name);
+exit();
+}
+return Redirect::to('/newsletters');
+}
+}
+?>
+==
+
+{% if newsletters.count %}
+
+<div class="container">
+    <div class="row">
+        {% for record in newsletters %}
+        <div class="col-md-3 col-xs-12">
+            <div class="text-center">
+                <span class="card_image_container" style="background: url({{record.newsletter_image.thumb(380,240,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
+                <span class="card_title" style="min-height: 100px;">{{record.name}}</span>
+                {% if record.file %}
+                <div class="col-xs-12">
+                    <div class="text-center">
+
+
+                        <a class="link btn btn-primary mb-1 mt-1" style="max-width: unset" href="{{record.url}}" target="_blank">Read the newsletter</a>
+
+                        {{form_open({ request: 'onDownloadFile' }) }}
+                        <input type="hidden" value="{{record.file.id}}" name="id">
+                        <button type="submit" class="btn btn-primary" data-attach-loading>Download <i class="pr p-download"></i></button>
+                        {{ form_close() }}
+
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% else %}
+<div class="container-fluid bg-newsletter">
+    <div class="container">
+        <iframe src="https://dashboard.mailerlite.com/forms/457412/91683683093710364/share" width="400" height="843" title="Subscribe"></iframe>
+    </div>
+</div>
+{% endif %}
+
+

@@ -1,0 +1,49 @@
+url = "/data-and-evidence"
+layout = "default"
+title = "Data and Evidence"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron data-and-evidence-intro]
+jumbotron = "data-and-evidence-intro"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron biodiversity-cubes]
+jumbotron = "biodiversity-cubes"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron biodiversity-indicators]
+jumbotron = "biodiversity-indicators"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+
+<!-- Intro -->
+{% component 'data-and-evidence-intro' %}
+
+<!-- Box header -->
+{% component 'biodiversity-cubes' %}
+
+<!-- Data cube text -->
+{% component 'biodiversity-indicators' %}
+
+<script>
+    $(document).ready(function() {
+        $('.text').click(function() {
+            $(this).toggleClass('clicked');
+            $(this).next('.hidden-text').toggleClass('show-hidden-text');
+        });
+    });
+</script>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="56.5" viewBox="0 0 65 56.5">
+  <g id="Group_17324" data-name="Group 17324" transform="translate(-755.5 -975.75)">
+    <g id="Group_15903" data-name="Group 15903" transform="translate(104.5 -1247.75)">
+      <rect id="Rectangle_3741" data-name="Rectangle 3741" width="62" height="44" rx="2" transform="translate(652.5 2225)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_15885" data-name="Group 15885" transform="translate(0.5 6)">
+        <line id="Line_44" data-name="Line 44" y2="9" transform="translate(682.5 2263.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+        <line id="Line_45" data-name="Line 45" x2="16" transform="translate(674.5 2272.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="Icon_feather-database" data-name="Icon feather-database" transform="translate(779.5 987.884)">
+      <path id="Path_27200" data-name="Path 27200" d="M24.01,6.252c0,1.8-4.367,3.252-9.755,3.252S4.5,8.047,4.5,6.252,8.867,3,14.255,3,24.01,4.456,24.01,6.252Z" transform="translate(-4.5 -3)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_27201" data-name="Path 27201" d="M24.01,18c0,1.8-4.336,3.252-9.755,3.252S4.5,19.8,4.5,18" transform="translate(-4.5 -7.161)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_27202" data-name="Path 27202" d="M4.5,7.5V22.674c0,1.8,4.336,3.252,9.755,3.252s9.755-1.452,9.755-3.252V7.5" transform="translate(-4.5 -4.248)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+    <line id="Line_52" data-name="Line 52" x2="9" transform="translate(770.5 991.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_54" data-name="Line 54" x2="9" transform="translate(770.5 1005.945)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_53" data-name="Line 53" x2="15" y2="0.148" transform="translate(764.5 998.648)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

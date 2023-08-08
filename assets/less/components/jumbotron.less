@@ -1,0 +1,694 @@
+.jumbotron {
+    position: absolute;
+    // z-index: 100;
+
+    .breakpoint-large-down({
+        padding-top: 51px;
+    });
+}
+
+.jumbotron p{
+  color: @white-color!important;
+}
+
+.background {
+  position: relative;
+  padding: 0 20px 80px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+    .breakpoint-large-down({
+        padding: 0px;
+        margin-top: 20px;
+
+    });
+
+    .background-content{
+      background-color: @dark-color;
+
+      mix-blend-mode: @dark-color;
+      background-image: linear-gradient(0deg, rgba(0, 89, 87, 0.85), rgba(0, 89, 87, 0.85)), url('../../assets/images/AdobeStock_391872386.jpeg');
+
+      padding: 50px 480px 50px 80px;
+      .breakpoint-large-down({
+          max-width: 100%;
+        padding: 30px;
+      });
+    }
+
+    .background_bg{
+        background: url("../../assets/images/about-vision.png") right no-repeat;
+        width: 453px;
+        height: 453px;
+        top: -80px;
+
+        .breakpoint-large-down({
+          position: relative !important;
+          display: block;
+          top: 0px;
+          order: 1!important;
+          min-height: 300px;
+            max-width: 100%;
+        });
+    }
+
+    p:has(a.edit-link){
+        display: none;
+    }
+
+  h1{
+    text-align: left!important;
+      color: @white-color;
+  }
+
+  p {
+    color: @white-color;
+  }
+
+}
+
+
+.vision {
+  position: relative;
+  margin-left: 280px;
+  padding: 0px 0px 50px 0px;
+    .breakpoint-large-down({
+        margin-left: 0;
+    });
+
+    .vision-content{
+      background-color: @dark-color;
+      background-image: linear-gradient(0deg, rgba(0, 89, 87, 0.85), rgba(0, 89, 87, 0.85)), url('../../assets/images/about-header.jpg');
+      padding: 50px 50px 50px 220px;
+
+      // background: url("../../assets/images/about-background.png") cover no-repeat;
+      .breakpoint-large-down({
+        max-width:100%;
+        padding: 30px;
+      });
+    }
+
+    .vision_bg{
+        background: url("../../assets/images/about-background.png") left no-repeat;
+        width: 411px;
+        height: 398px;
+        top: -180px;
+        left: -280px;
+        .breakpoint-large-down({
+          position: relative !important;
+          display: block;
+          top: 0px;
+          order: 1!important;
+          min-height: 300px;
+            max-width: 100%;
+            display: none;
+        });
+    }
+
+    .vision_bg_2{
+        background: url("../../assets/images/about-vision-2.png") left no-repeat;
+        width: 215px;
+        height: 215px;
+        top: 260px;
+        left: -85px;
+        .breakpoint-large-down({
+          position: relative !important;
+          display: block;
+          top: 0px;
+          order: 1!important;
+          min-height: 300px;
+            max-width: 100%;
+            display: none;
+        });
+    }
+
+    p:has(a.edit-link){
+        display: none;
+    }
+
+  h1{
+    text-align: left!important;
+      color: @white-color;
+  }
+
+  p {
+    color: @white-color;
+  }
+}
+
+.intro-text {
+  font-family: PT Sans Caption;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.3em;
+  padding: 0 !important;
+  margin: 50px 0 0 0 !important;
+}
+
+.font24{
+    font-size: 24px;
+    line-height: 1.3em;
+}
+
+.project_results_list{
+    .col-xs-12{
+        background: @dark-color;
+        border-radius: 4px;
+        padding: 25px 25px 25px 160px!important;
+        color: @white-color;
+        position: relative;
+        flex-basis: 49%;
+        margin: 12px 0;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        min-height: 155px;
+        .breakpoint-large-down({
+            flex-basis: 100%;
+        });
+        &:hover{
+            box-shadow: 0px 0px 30px #00595780;
+        }
+        h3{
+            font-family: "PT Sans Narrow";
+            font-size: 24px;
+            font-weight: bold;
+            color: @white-color;
+            &:before{
+                position: absolute;
+                content: ' ';
+                background: @white-color;
+                width: 106px;
+                height: 106px;
+                border-radius: 4px;
+                left: 25px;
+                top: 25px;
+            }
+        }
+
+        &:nth-of-type(1){
+            h3::before{
+                background: @white-color url("../../assets/images/Policy alignment.svg") center no-repeat;
+                background-size: 76px;
+            }
+        }
+
+        &:nth-of-type(2){
+            h3::before{
+                background: @white-color url("../../assets/images/Evidence base.svg") center no-repeat;
+                background-size: 76px;
+            }
+        }
+
+        &:nth-of-type(3){
+            h3::before{
+                background: @white-color url("../../assets/images/Automated workflows.svg") center no-repeat;
+                background-size: 55px;
+            }
+        }
+
+        &:nth-of-type(4){
+            h3::before{
+                background: @white-color url("../../assets/images/Cloud computing.svg") center no-repeat;
+                background-size: 76px;
+            }
+        }
+
+        &:nth-of-type(5){
+            h3::before{
+                background: @white-color url("../../assets/images/Capacity building.svg") center no-repeat;
+                background-size: 76px;
+            }
+        }
+
+        &:nth-of-type(6){
+            h3::before{
+                background: @white-color url("../../assets/images/Case studies.svg") center no-repeat;
+                background-size: 76px;
+            }
+        }
+    }
+}
+
+.objectives-list{
+  .col-xs-12{
+    text-align: center;
+    position: relative;
+    background: @dark-color;
+    border-radius: 4px;
+    margin: 100px 0px 50px 0px;
+    padding: 85px 25px 30px 25px!important;
+    color: @white-color;
+    max-width: 350px;
+
+    p{
+      color:white;
+    }
+
+    h3{
+      font-size: 24px;
+      font-weight: bold;
+      color: @white-color;
+
+      &:before{
+          position: absolute;
+          content: ' ';
+          background: @white-color;
+          width: 106px;
+          height: 106px;
+          border-radius: 4px;
+          box-shadow: 0px 3px 6px #0c0c0c29;
+          top: -50px;
+          left: 120px;
+      }
+  }
+
+  &:nth-of-type(1){
+    h3::before{
+        background: @white-color url("../../assets/images/FAIR data.svg") center no-repeat;
+        background-size: 44px;
+    }
+  }
+
+  &:nth-of-type(2){
+      h3::before{
+          background: @white-color url("../../assets/images/Informed policy.svg") center no-repeat;
+          background-size: 72px;
+      }
+  }
+
+  &:nth-of-type(3){
+      h3::before{
+          background: @white-color url("../../assets/images/Model-ready datasets.svg") center no-repeat;
+          background-size: 44px;
+      }
+  }
+
+  &:nth-of-type(4){
+      h3::before{
+          background: @white-color url("../../assets/images/Adaptable workflows.svg") center no-repeat;
+          background-size: 64px;
+      }
+  }
+
+  &:nth-of-type(5){
+      h3::before{
+          background: @white-color url("../../assets/images/Free tools.svg") center no-repeat;
+          background-size: 64px;
+      }
+  }
+
+  &:nth-of-type(6){
+      h3::before{
+          background: @white-color url("../../assets/images/Exemplar workflows.svg") center no-repeat;
+          background-size: 56px;
+      }
+  }
+
+  }
+
+}
+
+.case-studies-list,
+.capacity-building-list,
+.biodiversity-indicators-list,
+.policy-list,
+.workflows-list,
+.biodiversity-cubes-list{
+    .col-xs-12{
+        text-align: center;
+        position: relative;
+        background: @dark-color;
+        border-radius: 4px;
+        margin: 100px 0px 50px 0px;
+        padding: 85px 25px 30px 25px!important;
+        color: @white-color;
+        max-width: 300px;
+        height: 300px;
+        
+        .breakpoint-large-down({
+            flex-basis: 100%;
+        });
+        &:hover{
+            box-shadow: 0px 0px 30px #00595780;
+        }
+
+        .date {
+            color: #48A529;
+        }
+
+        .hidden-text {
+            position: absolute;
+            background: @white-color;
+            box-shadow: 0px 0px 10px #00595729;
+            top: 297px;
+            left: 0px;
+            display: none;
+            text-align: center;
+            font-size: 15px;
+            color: #707070;
+            padding: 25px;
+        }
+
+        .show-hidden-text {
+            z-index: 10;
+            display: block;
+        }
+        
+        .text{
+            color: @link-color;
+
+            &:before{
+                position: absolute;
+                content: ' ';
+                background: @link-color;
+                width: 37px;
+                height: 37px;
+                border-radius: 1px;
+                box-shadow: 0px 3px 6px #0c0c0c29;
+                top: 280px;
+                left: 136px;
+                background-image: url("../../assets/images/arrow_down-1.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 16px;
+                cursor: pointer;
+                z-index: 15;
+            }
+
+            &.clicked:before {
+                transform: rotate(180deg);
+            }
+
+            // .show-hidden-text {
+            //     display: block;
+            // }
+
+            // &:hover::before {
+            //     display: block;
+            //     transform: rotate(180deg);
+            // }
+
+            &::before + .hidden-text {
+                display: none;
+            }
+
+            // &:hover + .hidden-text {
+            //     display: block;
+            // }
+        }
+
+        h3{
+            font-size: 24px;
+            font-weight: bold;
+            color: @white-color;
+
+            &:before{
+                position: absolute;
+                content: ' ';
+                background: @white-color;
+                width: 106px;
+                height: 106px;
+                border-radius: 4px;
+                box-shadow: 0px 3px 6px #0c0c0c29;
+                top: -50px;
+                left: 100px;
+            }
+        }
+    }
+}
+
+.workflows-list {
+    .col-xs-12 {
+        max-width: 338px!important;
+        .text {
+
+            &:before {
+                left: 152px;
+            }
+        }
+        h3 {
+            &:before {
+                left: 116px;
+            }
+        }
+
+        &:nth-of-type(1) {
+            h3 {
+                &::before {
+                    background: @white-color url("../../assets/images/Exemplar workflows.svg") center no-repeat;
+                    background-size: 44px 57px;
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            h3 {
+                &::before {
+                    background: @white-color url("../../assets/images/Deep learning.svg") center no-repeat;
+                    background-size: 52px 67px;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            h3{
+                &::before {
+                    background: @white-color url("../../assets/images/Automated workflows.svg") center no-repeat;
+                    background-size: 71px 57px;
+                }
+            }
+        }
+
+    }
+}
+
+.biodiversity-indicators-list{
+  .col-xs-12{
+
+  &:nth-of-type(1){
+    h3::before{
+        background: @white-color url("../../assets/images/FAIR data.svg") center no-repeat;
+        background-size: 44px;
+    }
+  }
+
+  &:nth-of-type(2){
+      h3::before{
+          background: @white-color url("../../assets/images/Informed policy.svg") center no-repeat;
+          background-size: 72px;
+      }
+  }
+
+  &:nth-of-type(3){
+      h3::before{
+          background: @white-color url("../../assets/images/Model-ready datasets.svg") center no-repeat;
+          background-size: 44px;
+      }
+  }
+
+  &:nth-of-type(4){
+      h3::before{
+          background: @white-color url("../../assets/images/Adaptable workflows.svg") center no-repeat;
+          background-size: 64px;
+      }
+  }
+  }
+}
+
+.policy-list{
+    .col-xs-12 {
+        max-width: 338px!important;
+        margin: 50px 30px;
+        .text {
+
+            &:before {
+                left: 152px;
+            }
+        }
+        h3 {
+            &:before {
+                left: 116px;
+            }
+        }
+
+          &:nth-of-type(1){
+            h3::before{
+                background: @white-color url("../../assets/images/European biodiversity initiatives.svg") center no-repeat;
+                background-size: 76px 79px;
+            }
+          }
+
+          &:nth-of-type(2){
+              h3::before{
+                  background: @white-color url("../../assets/images/International science-policy convergence.svg") center no-repeat;
+                  background-size: 67px;
+              }
+          }
+        }
+}
+
+.capacity-building-list{
+    .col-xs-12 {
+        max-width: 338px!important;
+        margin: 50px 30px;
+        .text {
+
+            &:before {
+                left: 152px;
+            }
+        }
+        h3 {
+            &:before {
+                left: 116px;
+            }
+        }
+
+          &:nth-of-type(1){
+            h3::before{
+                background: @white-color url("../../assets/images/Software requirements and assessment.svg") center no-repeat;
+                background-size: 76px 79px;
+            }
+          }
+
+          &:nth-of-type(2){
+              h3::before{
+                  background: @white-color url("../../assets/images/FAIR data products.svg") center no-repeat;
+                  background-size: 67px;
+              }
+          }
+          &:nth-of-type(3){
+            h3::before{
+                background: @white-color url("../../assets/images/Hackathon.svg") center no-repeat;
+                background-size: 76px 79px;
+            }
+          }
+
+          &:nth-of-type(4){
+              h3::before{
+                  background: @white-color url("../../assets/images/Tutorials.svg") center no-repeat;
+                  background-size: 67px;
+              }
+          }
+          &:nth-of-type(5){
+            h3::before{
+                background: @white-color url("../../assets/images/Training and support.svg") center no-repeat;
+                background-size: 76px 79px;
+            }
+          }
+        }
+}
+
+.biodiversity-cubes-list{
+    .col-xs-12{
+
+        &:nth-of-type(1){
+            h3::before{
+                background: @white-color url("../../assets/images/Species occurrence cube.svg") center no-repeat;
+                background-size: 66px;
+            }
+        }
+
+        &:nth-of-type(2){
+            h3::before{
+                background: @white-color url("../../assets/images/Suitability cube.svg") center no-repeat;
+                background-size: 66px;
+            }
+        }
+
+        &:nth-of-type(3){
+            h3::before{
+                background: @white-color url("../../assets/images/Dissimilarity cube.svg") center no-repeat;
+                background-size: 66px;
+            }
+        }
+
+        &:nth-of-type(4){
+            h3::before{
+                background: @white-color url("../../assets/images/Network invasibility cube.svg") center no-repeat;
+                background-size: 40px;
+            }
+        }
+    }
+}
+
+.case-studies-list{
+    .col-xs-12{
+        max-width: 254px!important;
+        height: 189px!important;
+        margin: 50px 25px;
+        .text {
+            &:before {
+                left: 109px;
+                top: 172px;
+            }
+
+        }
+        h3 {
+            &:before {
+                left: 74px;
+            }
+        }
+        .hidden-text {
+            top: 189px;
+        }
+        &:nth-of-type(1){
+            h3::before{
+                background: @white-color url("../../assets/images/Regional indicators in Europe.svg") center no-repeat;
+                background-size: 62px 59px;
+            }
+        }
+
+        &:nth-of-type(2){
+            h3::before{
+                background: @white-color url("../../assets/images/Biological invasions in South Africa.svg") center no-repeat;
+                background-size: 67px 59px;
+            }
+        }
+
+        &:nth-of-type(3){
+            h3::before{
+                background: @white-color url("../../assets/images/Stakeholder-driven case study.svg") center no-repeat;
+                background-size: 77px 73px;
+            }
+        }
+
+        &:nth-of-type(4){
+            h3::before{
+                background: @white-color url("../../assets/images/Global and continental biodiversity change.svg") center no-repeat;
+                background-size: 62px 53px;
+            }
+        }
+    }
+}
+
+.box-header{
+  background-color: @dark-color;
+  box-shadow: 0px 0px 10px #00595729;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+
+  h3{
+    font-family: PT Sans Caption;
+    font-style: bold;
+    font-size: 28px;
+    padding: 20px;
+    color: @white-color;
+    letter-spacing: 0px;
+  }
+
+}
+
+.data-cube-text{
+  text-align: center;
+  font-family: PT Sans Caption;
+  padding-top: 16px;
+  font-size: 20px;
+  line-height: 1.3em;
+}
+
+iframe{
+    box-shadow: 0px 0px 10px #00595729;
+    border-radius: 4px;
+    max-width: 100%;
+}

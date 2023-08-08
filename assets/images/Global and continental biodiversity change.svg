@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="56.5" viewBox="0 0 65 56.5">
+  <g id="Group_17400" data-name="Group 17400" transform="translate(-1083 -533.25)">
+    <g id="Group_17387" data-name="Group 17387" transform="translate(432 -1690.25)">
+      <rect id="Rectangle_3741" data-name="Rectangle 3741" width="62" height="44" rx="2" transform="translate(652.5 2225)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      <g id="Group_15885" data-name="Group 15885" transform="translate(0.5 6)">
+        <line id="Line_44" data-name="Line 44" y2="9" transform="translate(682.5 2263.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+        <line id="Line_45" data-name="Line 45" x2="16" transform="translate(674.5 2272.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="Group_17351" data-name="Group 17351" transform="translate(246 -21.608)">
+      <path id="Icon_awesome-globe-europe" data-name="Icon awesome-globe-europe" d="M39.364,20.036a11.917,11.917,0,0,1-.646,3.854H37.5a.946.946,0,0,1-.682-.287l-1.915-1.951a.714.714,0,0,1,.006-1l.748-.748v-.521a.68.68,0,0,0-.2-.479l-.563-.563a.68.68,0,0,0-.479-.2h-.958a.677.677,0,0,1-.479-1.155l.563-.563a.68.68,0,0,1,.479-.2h1.915a.679.679,0,0,0,.676-.676v-.563a.679.679,0,0,0-.676-.676h-2.2a.96.96,0,0,0-.958.958v.269a.96.96,0,0,1-.652.91l-1.891.628a.476.476,0,0,0-.329.455v.132a.48.48,0,0,1-.479.479h-.958A.48.48,0,0,1,28,17.666a.48.48,0,0,0-.479-.479h-.186a.488.488,0,0,0-.431.263l-.563,1.119a.953.953,0,0,1-.856.527H24.163a.96.96,0,0,1-.958-.958V16.624a.961.961,0,0,1,.281-.676l1.2-1.2A1.481,1.481,0,0,0,25.12,13.7a.482.482,0,0,1,.329-.455l2.394-.8a.7.7,0,0,0,.263-.162l1.6-1.6a.677.677,0,0,0-.479-1.155H27.993l-.958.958v.479a.48.48,0,0,1-.479.479H25.6a.48.48,0,0,1-.479-.479v-1.2a.482.482,0,0,1,.192-.383l1.73-1.3c.114-.006.227-.018.341-.018A11.984,11.984,0,0,1,39.364,20.036Zm-19.025-6.4a.68.68,0,0,1,.2-.479l1.52-1.52a.677.677,0,0,1,1.155.479v.958a.68.68,0,0,1-.2.479l-.563.563a.68.68,0,0,1-.479.2h-.958A.679.679,0,0,1,20.339,13.638ZM28,31.975V31.55a.96.96,0,0,0-.958-.958H25.833a4.143,4.143,0,0,1-2.119-.706l-1.329-1A2.718,2.718,0,0,1,21.3,26.709v-1.43a2.72,2.72,0,0,1,1.323-2.334l2.567-1.538a2.759,2.759,0,0,1,1.4-.389h1.867a2.73,2.73,0,0,1,1.771.652l2.585,2.22h1.1a1.912,1.912,0,0,1,1.353.563l1.035,1.035a1.1,1.1,0,0,0,.772.317h.8A11.948,11.948,0,0,1,28,31.975Z" transform="translate(830.238 557.748)" fill="none" stroke="#6cddb4" stroke-width="3"/>
+      <g id="Ellipse_49" data-name="Ellipse 49" transform="translate(845 564.608)" fill="none" stroke="#6cddb4" stroke-width="3">
+        <circle cx="13" cy="13" r="13" stroke="none"/>
+        <circle cx="13" cy="13" r="11.5" fill="none"/>
+      </g>
+    </g>
+    <line id="Line_90" data-name="Line 90" x2="15" transform="translate(1123.5 546.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_91" data-name="Line 91" x2="15" transform="translate(1123.5 555.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_92" data-name="Line 92" x2="15" transform="translate(1123.5 564.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

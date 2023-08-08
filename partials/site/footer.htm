@@ -1,0 +1,133 @@
+[menu about_menu]
+start = "id-2"
+activeNode = 0
+listItemClasses = "footer-menu-item"
+primaryClasses = "footer-menu"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[menu solutions_menu]
+start = "id-5"
+activeNode = 0
+listItemClasses = "footer-menu-item"
+primaryClasses = "footer-menu"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[menu activities_menu]
+start = "id-9"
+activeNode = 0
+listItemClasses = "footer-menu-item"
+primaryClasses = "footer-menu"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[menu resources_menu]
+start = "id-33"
+activeNode = 0
+listItemClasses = "footer-menu-item"
+primaryClasses = "footer-menu"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[menu project_menu]
+start = "id-3"
+activeNode = 0
+listItemClasses = "footer-menu-item"
+primaryClasses = "footer-menu"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+
+[cookieConsent]
+message = "This website uses cookies to ensure you get the best experience on our website."
+dismiss = "Got it!"
+learnMore = "More info"
+link = "/privacy-policy"
+theme = "dark-bottom"
+
+[jumbotron footer_claim]
+jumbotron = "footer-claim"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+<!-- footer content -->
+<div class="container-fluid border-box dark-background">
+    {% component 'cookieConsent' %}
+    <div class="container">
+        <div class="row top-xs footer-menu-container">
+            <div class="col-md-7 col-xs-12 footer-right-border">
+                <div class="row between-xs">
+                    <div class="col-xs-12 col-md-1 col-sm-6 start-md center-xs start-sm">
+                        <div class="footer-head">ABOUT</div>
+                        {% component 'about_menu' %}
+                    </div>
+                    <div class="col-xs-12 col-md-2 col-sm-6 start-md center-xs start-sm">
+                        <div class="footer-head">SOLUTIONS</div>
+                        {% component 'solutions_menu' %}
+                    </div>
+                    <div class="col-xs-12 col-md-2 col-sm-6 start-md center-xs start-sm">
+                        <div class="footer-head">ACTIVITIES</div>
+                        {% component 'activities_menu' %}
+                    </div>
+                    <div class="col-xs-12 col-md-2 col-sm-6 start-md center-xs start-sm">
+                        <div class="footer-head">RESOURCES</div>
+                        {% component 'resources_menu' %}
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-sm-6 start-md center-xs start-sm">
+                        <div class="footer-head">PROJECT COORDINATOR</div>
+                        <br>
+                        <div style=" line-height: 2em;">
+                            Dr Quentin Groom<br>
+                            Meise Botanic Garden<br>
+                            quentin.groom[at]plantentuinmeise.be
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-12">
+                {% if (footer_funds_flag != null or footer_funds_text != '') %}
+                <div class="funding flex-column my-1 my-lg-0 flex-lg-row px-1 align-items-center col-sm col-xs-12">
+                    {% if footer_funds_flag %}
+                        <img class="text" src="{{ footer_funds_flag }}" />
+                        <span>Funded by<br> the European Union</span>
+                    {% endif %}
+                </div>
+                {% component 'footer_claim' %}
+                {% endif %}
+            </div>
+            <div class="col-md-4 col-xs-12 link-container">
+                <div class="row middle-xs">
+                    <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a></div>
+                    <div class="social-networks">
+                        {% if this.theme.twitter_url %}
+                        <a href="{{this.theme.twitter_url}}" target="_blank" class="pr p-twitter normal"></a>
+                        {% endif %}
+                        {% if this.theme.facebook_url %}
+                        <a href="{{this.theme.facebook_url}}" target="_blank" class="pr p-facebook big"></a>
+                        {% endif %}
+                        {% if this.theme.linkedin_url %}
+                        <a href="{{this.theme.linkedin_url}}" target="_blank" class="pr p-linkedin big"></a>
+                        {% endif %}
+                        {% if this.theme.youtube_url %}
+                        <a href="{{this.theme.youtube_url}}" target="_blank" class="pr p-youtube big"></a>
+                        {% endif %}
+                        {% if this.theme.instagram_url %}
+                        <a href="{{this.theme.instagram_url}}" target="_blank" class="pr p-instagram big"></a>
+                        {% endif %}
+                        {% if this.theme.researchgate_url %}
+                        <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate big" style="width: 64px;"></a>
+                        {% endif %}
+                        <a href="{{ this.theme.subscribe }}" class="pl p-secondary p-mail normal"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Powered by pensoft -->
+    <div class="powered-by row between-xs middle-xs">
+    <span>Designed and powered by <a href="https://pensoft.net/" target="_blank">
+    <img class="pensoft_logo" src="{{ 'assets/images/pensoft-logo.svg'|theme }}" /></a>
+    </span>
+    </div>
+</div>

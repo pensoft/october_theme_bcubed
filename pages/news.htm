@@ -1,0 +1,110 @@
+url = "/news/:id?|[a-zA-Z\-0-9]"
+layout = "default"
+title = "News"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+header_image = "header/news.jpg"
+
+[list]
+maxItems = 9
+templates = "template3"
+thumb_width = 370
+thumb_height = 212
+no_records_message = "Stay tuned for upcoming news!"
+
+[related_articles]
+limit = 3
+
+[gallery]
+==
+<?php
+use Pensoft\Articles\Models\Article;
+
+function urlencode($string){
+    return trim(urlencode($string));
+}
+function onStart()
+{
+
+    $this['article'] = Pensoft\Articles\Models\Article::where('slug', $this->param('id'))->first();
+if($this['article']){
+
+$this['is_detail_page'] = $this['article'] ? true : false;
+$this['allow_share'] = $this['article']['allow_share'] == 'yes' ? true : false;
+if($this['is_detail_page'] and $this['allow_share']){
+$this['page_url'] = $this->pageUrl('');
+$this['encoded_title'] = urlencode($this['article']['title']);
+$this['slug'] = $this['article']['slug'];
+\BennoThommo\Meta\Meta::set('twitter:card', 'summary');
+\BennoThommo\Meta\Meta::set('twitter:title', $this['article']['title']);
+\BennoThommo\Meta\Meta::set('twitter:description', str_limit(Html::strip($this['article']['content']), 255));
+\BennoThommo\Meta\Meta::set('og:title', $this['article']['title']);
+\BennoThommo\Meta\Meta::set('og:description', str_limit(Html::strip($this['article']['content']), 255) );
+\BennoThommo\Meta\Meta::set('og:type', 'article');
+\BennoThommo\Meta\Meta::set('og:url', $this->pageUrl(''));
+if($this['article']['cover']){
+\BennoThommo\Meta\Meta::set('twitter:image', $this['article']['cover']->getThumb(300, 300, ['mode' => 'crop']));
+
+\BennoThommo\Meta\Meta::set('og:image', $this['article']['cover']->getThumb(600, 314, ['mode' => 'crop']));
+\BennoThommo\Meta\Meta::set('og:image:width', 600);
+\BennoThommo\Meta\Meta::set('og:image:height', 314);
+}
+
+}
+}
+}
+?>
+==
+<div class="container">
+    {% if is_detail_page %}
+    <div class="row single-news-item">
+
+
+        <div class="col-xs-12 col-md-6">
+
+            <div class="news-title">
+                <h1 class="single-new-title">{{article.title}}</h1>
+            </div>
+            <div class="text-published">{{article.pretty_published_at}}</div>
+            <div class="content">
+                {{article.content|raw}}
+            </div>
+                <div class="row share_container middle-xs">
+                    <div class="col-lg-2 col-xs-2 start-xs">Share</div>
+                    <div class="col-xs-10">
+                        <a href="http://twitter.com/share?text={{article.title}}&url={{page_url}}" target="_blank" class="btn p-primary pr p-twitter normal"></a>
+
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{page_url}}&amp;src=sdkpreparse" target="_blank" class="btn pr p-primary p-facebook big"></a>
+
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="btn pr p-primary p-linkedin big"></a>
+
+                    </div>
+                </div>
+
+            {% component 'gallery' %}
+
+        </div>
+        <div class="col-xs-12 col-md-6 end-md center-xs">
+            {% if article.cover %}
+                <img src="{{ article.cover.thumb(507, auto, { mode: 'crop' }) }}" />
+            {% endif %}
+            <div style="width: 100%; max-width: 507px; float: right">{{article.caption|raw}}</div>
+            <div class="related_articles">
+                {% if relatedArticles.count %}
+                    <h1 class="single-new-title">Related news</h1>
+                    {% component 'related_articles' %}
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-xs">
+            {% component 'list' %}
+        </div>
+    </div>
+    {% endif %}
+</div>

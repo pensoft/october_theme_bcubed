@@ -1,0 +1,41 @@
+==
+
+==
+<div class="container highlights-news">
+
+	<div class="row">
+		<div class="col-xs-12 news-head">
+			<h1 class="section-title">{{title}}</h1>
+            <a class="btn">All news</a>
+		</div>
+	</div>
+    
+	<div class="row newslist">
+		<div class="col-xs-12">
+				{% for highlight in highlights %}
+				<div class="news-item">
+					<div>
+						<div class="news_image_holder">
+							{% if highlight.cover %}
+							<img class="card-img-top" src="{{ highlight.cover|crop_image|resize(338, 218, {'mode': 'crop'}) }}">
+							{% endif %}
+						</div>
+
+						<div class="news_content_holder">
+							<div class="text-published">{{highlight.pretty_published_at}}</div>
+
+							<div class="card-body">
+								{{highlight.content|raw}}
+							</div>
+							
+							{% if highlight.href %}
+								<a href= {{highlight.href}} class="read_more">Read more</a>
+							{%endif %}
+						</div>
+					</div>
+				</div>
+
+				{% endfor %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42.239" height="66.618" viewBox="0 0 42.239 66.618">
+  <g id="Group_17349" data-name="Group 17349" transform="translate(-1095.382 -660.382)">
+    <g id="Rectangle_3790" data-name="Rectangle 3790" transform="translate(1107 691)" fill="none" stroke="#6cddb4" stroke-width="3">
+      <rect width="20" height="36" rx="7" stroke="none"/>
+      <rect x="1.5" y="1.5" width="17" height="33" rx="5.5" fill="none"/>
+    </g>
+    <g id="Rectangle_3791" data-name="Rectangle 3791" transform="translate(1107 679)" fill="none" stroke="#6cddb4" stroke-width="3">
+      <rect width="20" height="16" rx="7" stroke="none"/>
+      <rect x="1.5" y="1.5" width="17" height="13" rx="5.5" fill="none"/>
+    </g>
+    <line id="Line_75" data-name="Line 75" x2="16" y2="18" transform="translate(1097.5 662.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_77" data-name="Line 77" x2="9" transform="translate(1100.5 693.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_80" data-name="Line 80" x2="9" transform="translate(1124.5 693.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_83" data-name="Line 83" y2="10" transform="translate(1117 714.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_78" data-name="Line 78" x2="9" transform="translate(1097.5 704.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_81" data-name="Line 81" x2="9" transform="translate(1127 704.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_79" data-name="Line 79" x2="9" transform="translate(1099.5 714.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_82" data-name="Line 82" x2="9" transform="translate(1127 714.5)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_76" data-name="Line 76" x1="16" y2="16.5" transform="translate(1119.5 664)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

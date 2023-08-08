@@ -1,0 +1,27 @@
+url = "/cloud-computing"
+layout = "default"
+title = "Cloud Computing"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron cloud_computing_text]
+jumbotron = "cloud-computing-image"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron cloud_computing_image]
+jumbotron = "cloud-computing-image"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+<div class="container">
+    {% component 'cloud_computing_image' %}
+</div>

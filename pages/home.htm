@@ -1,0 +1,119 @@
+url = "/"
+layout = "default"
+title = "B-Cubed"
+is_hidden = 0
+meta_description = "homepage desc"
+seo_keywords = "keywords"
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron homepage_intro]
+jumbotron = "homepage-intro"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron project_results]
+jumbotron = "project-results"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+
+<?php
+use Pensoft\Partners\Models\Partners as Partner;
+use Pensoft\Articles\Models\Article;
+
+function onStart(){
+    //main
+    $this['consortium_partners'] = Partner::where('type', 1)->get();
+    $this['highlights'] = Article::news()->descPublished()->take(4)->get()->map(function($item){
+        $item->content = str_limit(strip_tags($item->content), 140);
+        $item->href = $item->slug;
+        return $item;
+    });
+}
+?>
+==
+{% component 'siteSearchInclude' %}
+<!-- Embeded video -->
+<div class="container-fluid border-box secondary_background">
+    <div class="container">
+        {% component 'homepage_intro'%}
+    </div>
+</div>
+
+<div class="container">
+    {% component 'project_results' %}
+</div>
+
+<!-- Latest from news -->
+<div class="container-fluid border-box secondary_background">
+    <div class="container highlights-news">
+        <div class="row">
+            <div class="col-xs-7 start-xs">
+                <h1 class="base_heading highlight_new_template_3">Latest news</h1>
+            </div>
+            <div class="col-md-5 end-xs">
+                <a class="read_more btn btn-primary" href="{{'news'|page}}">
+                    All news <i></i>
+                </a>
+            </div>
+        </div>
+        <div class="row newslist">
+            <div class="col-xs-12">
+                {% for highlight in highlights %}
+                <div class="col-xs-12 col-md-3 news-item item-">
+                    <div class="news_column aos-init aos-animate" data-aos="fade-up">
+                        <a class="news-image" href="{{'news'|page}}/{{highlight.href}}">
+                            <img class="news-img-top" src="{{highlight.cover.thumb(280, 150, {'mode': 'crop'})}}">
+                        </a>
+                        <div class="news-container col-xs-12">
+                            <div class="text-published">{{highlight.pretty_published_at}}</div>
+                            <div class="news-title">
+                                <h3 class="card-title"><a href="{{'news'|page}}/{{highlight.href}}">{{highlight.title}}</a></h3>
+                            </div>
+
+                            <a class="read_more" href="{{'news'|page}}/{{highlight.href}}">
+                                Read more <i></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Consortium -->
+<div class="container">
+    <h1 class="section-title">Consortium</h1>
+    <div class="row middle-xs between-xs">
+        <div class="col-xs-12 center-xs consortium_partners">
+            <div id="slick">
+                {% for c in consortium_partners %}
+                <div class="slide">
+                    <div class="partner_logo"><a href="{{c.instituion_url}}" target="_blank">
+                        <img alt="{{ c.instituion }}" src="{{c.cover.thumb(auto,90,{'mode':'crop'})}}"></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Subsribe newsletter -->
+<div class="container border-box subscribe-newsletter-background">
+    <div class="row middle-xs between-xs subscribe-content">
+        <div class="col-md-12 col-xs-12 center-xs"><h1 class="subscribe-head">Subscribe to our newsletter and stay up to date!</h1></div>
+        <div class="col-md-7 col-xs-12 end-md center-xs"><a href="{{this.theme.subscribe}}" class="btn btn-primary" target="_blank">Subscribe</a></div>
+    </div>
+</div>

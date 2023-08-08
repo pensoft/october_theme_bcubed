@@ -1,0 +1,38 @@
+url = "/case-studies"
+layout = "default"
+title = "Case studies"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron intro]
+jumbotron = "case-studies-intro"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron content]
+jumbotron = "case-studies"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container">
+    {% component 'intro' %}
+    {% component 'content' %}
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.text').click(function() {
+            $(this).toggleClass('clicked');
+            $(this).next('.hidden-text').toggleClass('show-hidden-text');
+        });
+    });
+</script>

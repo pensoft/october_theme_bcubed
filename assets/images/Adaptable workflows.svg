@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="53" viewBox="0 0 55 53">
+  <g id="Group_15876" data-name="Group 15876" transform="translate(-255 -2209.713)">
+    <g id="Ellipse_25" data-name="Ellipse 25" transform="translate(255 2209.713)" fill="none" stroke="#6cddb4" stroke-width="3">
+      <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
+      <circle cx="9.5" cy="9.5" r="8" fill="none"/>
+    </g>
+    <g id="Ellipse_26" data-name="Ellipse 26" transform="translate(310 2262.713) rotate(180)" fill="none" stroke="#6cddb4" stroke-width="3">
+      <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
+      <circle cx="9.5" cy="9.5" r="8" fill="none"/>
+    </g>
+    <line id="Line_39" data-name="Line 39" y1="11.459" transform="translate(264.74 2227.762)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_42" data-name="Line 42" y1="11.459" transform="translate(300.265 2244.951) rotate(180)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_40" data-name="Line 40" x2="11" transform="translate(281 2220.713)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_41" data-name="Line 41" x2="10.313" transform="translate(283.648 2253.546) rotate(180)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-width="3"/>
+    <g id="Rectangle_3737" data-name="Rectangle 3737" transform="translate(273 2262.713) rotate(180)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+      <rect width="17" height="17" stroke="none"/>
+      <rect x="1.5" y="1.5" width="14" height="14" fill="none"/>
+    </g>
+    <g id="Rectangle_3738" data-name="Rectangle 3738" transform="translate(309 2228.713) rotate(180)" fill="none" stroke="#6cddb4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+      <rect width="17" height="17" stroke="none"/>
+      <rect x="1.5" y="1.5" width="14" height="14" fill="none"/>
+    </g>
+  </g>
+</svg>
