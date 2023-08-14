@@ -668,34 +668,89 @@
     }
 }
 
-.box-header{
-  background-color: @dark-color;
-  box-shadow: 0px 0px 10px #00595729;
-  border-radius: 4px;
-  padding: 0;
-  margin: 0;
+.box-header {
+    text-align: center;
+    padding: 0;
+    margin: 0;
 
-  h3{
-    font-family: PT Sans Caption;
-    font-style: bold;
-    font-size: 28px;
-    padding: 20px;
-    color: @white-color;
-    letter-spacing: 0px;
+    .cubes-head,
+    .indicators-head{
+        font-family: PT Sans Caption;
+        font-weight: bold;
+        font-size: 32px;
+        color: @dark-color;
+        letter-spacing: 0px;
+        position: relative;
+        .breakpoint-large-down({
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
+        });
+    }
 
-    .breakpoint-small-down ({
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 0;
-    });
-  }
+    .cubes-head {
+        &:before,
+        &:after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            background-color: @dark-color;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+        }
+
+        &:before {
+            left: 36%;
+            .breakpoint-huge-down({
+                left: 32%;
+            });
+        }
+        &:after {
+            left: 62%;
+            .breakpoint-huge-down({
+                left: 66%;
+            });
+        }
+    }
+
+    .indicators-head {
+        &:before,
+        &:after {
+            content: "";
+            width: 22px;
+            height: 22px;
+            background-color: @dark-color;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+        }
+
+        &:before {
+            left: 33%;
+            .breakpoint-huge-down({
+                left: 28%;
+            });
+        }
+        &:after {
+            left: 65%;
+            .breakpoint-huge-down({
+                left: 69%;
+            });
+        }
+    }
 }
 
 .data-cube-text{
   text-align: center;
   font-family: PT Sans Caption;
   padding-top: 16px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.3em;
 }
 
