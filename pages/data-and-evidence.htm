@@ -42,8 +42,10 @@ description_limit = 0
 <script>
     $(document).ready(function() {
         $('.text').click(function() {
+            $(this).closest('.col-xs-12').toggleClass('toggled');
             $(this).toggleClass('clicked');
             $(this).next('.hidden-text').toggleClass('show-hidden-text');
         });
     });
-</script>
+    </script>
+    

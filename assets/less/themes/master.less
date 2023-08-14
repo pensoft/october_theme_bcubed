@@ -236,7 +236,7 @@ p:has(.edit-link){
 
 
 #layout-content {
-  // padding-bottom: 345px;
+//   padding-bottom: 345px;
 }
 
 .partners_background{
@@ -261,7 +261,7 @@ p:has(.edit-link){
 }
 
 .content-wrapper{
-  min-height: 100%;
+//   min-height: 100%;
 }
 
 #layout-footer {
@@ -481,6 +481,10 @@ p:has(.edit-link){
      mix-blend-mode: @dark-color;
      background-image: linear-gradient(0deg, rgba(0, 89, 87, 0.7), rgba(0, 89, 87, 0.7)), url('../../assets/images/AdobeStock_202200382.jpeg');
 
+     .btn-primary {
+        border-color: @light-color !important;
+     }
+
      h1{
          color: @white-color;
          font-weight: bold;
@@ -679,6 +683,11 @@ p:has(.edit-link){
           &:hover{
               opacity: 0.7;
           }
+          .breakpoint-large-down({
+            display: none;
+            // top: 140px !important;
+            // left: 140px !important;
+      });
       }
 
       &.slick-next {
@@ -687,9 +696,16 @@ p:has(.edit-link){
           background: url("../../assets/images/arrow-left.svg")left no-repeat;
           background-size: 17px;
           //transform: rotate(180deg);
+
           &:hover{
               opacity: 0.7;
           }
+
+          .breakpoint-large-down({
+                display: none;
+                // top: 140px !important;
+                // left: 140px !important;
+          });
 
       }
       .breakpoint-large-down({
@@ -793,12 +809,13 @@ p:has(.edit-link){
 
     .icon-prev, .icon-next{
         .breakpoint-small-down({
-            display: none;
+            display: none !important;
         });
     }
 }
 
 .carousel-control {
+    width: 5% !important;
 
     .icon-prev, .icon-next{
         .breakpoint-small-down({
@@ -812,8 +829,6 @@ p:has(.edit-link){
         display: none!important;
     });
 }
-
-
 
 .carousel-control {
     .icon-prev{
@@ -947,6 +962,17 @@ now override the 3.3 new styles for modern browsers & apply opacity
     });
 }
 
+.cc_container .cc_message {
+    font-size: 1em;
+    color: white;
+}
 
-
-
+// Underliner for sliding menus
+// .underline {
+//     border-radius: 4px;
+//     position: absolute;
+//     bottom: -5px;
+//     height: 3px;
+//     background-color: @link-color;
+//     transition: ease-in-out 0.3s;
+// }

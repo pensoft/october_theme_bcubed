@@ -80,70 +80,84 @@ g:has(.fill_default){
   transition:.3s;
 }
 
-.partners{
+.partners {
     color: #1B1B2D;
-    h2{
+    
+    h2 {
         font-size: 30px;
         font-weight: normal;
         text-transform: uppercase;
         color: #1B1B2D;
-        text-align: left!important;
+        text-align: left !important;
         margin: 50px 0;
+        
         .breakpoint-large-down({
-            text-align: center!important;
+            text-align: center !important;
         });
     }
-  .tabs{
-      width: 100%;
-      display: flex;
-      justify-content: left;
-      margin-bottom: 50px;
 
-      .breakpoint-large-down({
-          width: fit-content;
-          margin: 30px auto;
-      });
+    .tabs {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        margin-bottom: 50px;
 
-      a{
-          width: fit-content;
-          font-weight: bold;
-          font-size: 16px;
-          cursor: pointer;
-          color: #00595785;
-          float: left;
+        .breakpoint-large-down({
+            width: fit-content;
+            margin: 30px auto;
+        });
 
-          .breakpoint-large-down({
-              margin-left: 0px;
-          });
+        .underline {
+            position: absolute;
+            bottom: -5px;
+            height: 3px;
+            background-color: @link-color;
+            transition: left 0.3s, width 0.3s;
+        }
+        
+        a {
+            box-sizing: border-box;
+            width: fit-content;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            color: #00595785;
+            float: left;
 
-          &:first-of-type{
-              height: 25px;
-              line-height: 25px;
-              margin-right: 20px;
-              &.active{
-                  color: @dark-color;
-                  border-bottom: 3px solid @light-color;
-              }
-          }
+            .breakpoint-large-down({
+                margin-left: 0px;
+            });
 
-          &:last-of-type{
-              height: 25px;
-              line-height: 25px;
-              margin-left: 20px;
-              &.active{
-                  color: @dark-color;
-                  border-bottom: 3px solid @link-color;
-              }
-          }
-      }
+            &:first-of-type {
+                height: 25px;
+                line-height: 25px;
+                margin-right: 20px;
+                
+                &.active {
+                    color: @dark-color;
+                }
+            }
 
-  }
+            &:last-of-type {
+                height: 25px;
+                line-height: 25px;
+                margin-left: 20px;
+                
+                &.active {
+                    color: @dark-color;
+                }
+            }
+        }
+    }
 
-  .tabs + div.row{
-      width: 100%;
-  }
-
+    .tabs + div.row {
+        width: 100%;
+    }
 }
+
+
+
 
 .countries_list{
 
@@ -233,11 +247,14 @@ g:has(.fill_default){
   margin-bottom: 30px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 30px #0059571A;
-  padding: 35px!important;
+  padding: 35px 35px 0 35px!important;
 
 
   .btn-primary{
     font-size: 15px;
+    &:after{
+        content: "\e9cb"
+    }
   }
 
   .partner_title{
@@ -258,6 +275,10 @@ g:has(.fill_default){
 
 
   .partner_description{
+    p{
+        color: #1B1B2D;
+        line-height: 24px;
+    }
       margin-top: 20px;
   }
 

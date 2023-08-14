@@ -37,12 +37,6 @@ $(document).ready(function() {
 
 	var count = $("h1").text().length;
 
-    // $('.text').click(function() {
-    //     $(this).toggleClass('clicked');
-    //     $(this).next('.hidden-text').toggleClass('show-hidden-text');
-    // });
-
-
 	$('.numbers').attr('data-aos', 'fade-up');
 	$('.mission .container').attr('data-aos', 'fade-up');
 	$('.vision .container').attr('data-aos', 'fade-up');
@@ -57,12 +51,11 @@ $(document).ready(function() {
 	// $('.timeline-item').attr('data-aos', 'fade-up');
 
 	// about page
-
 	$('.about img').attr('data-aos', 'fade-up');
-
 	$('.country_map').attr('data-aos', 'fade-up');
 	$('.partner-item').attr('data-aos', 'fade-up');
-
+    // $('.background_bg').attr('data-aos', 'fade-up');
+    
 	// media
 	$('.flyer_image_container img').attr('data-aos', 'fade-up');
 	$('.broshure_and_poster img').attr('data-aos', 'fade-up');
@@ -238,7 +231,6 @@ $(document).ready(function() {
             $(this).children(".plusminus").html('<span>Hide members</span><span class="minus"></span>');
         }
     });
-
 
     $('body').on('click', '.work_packages .accordion-toggle', function () {
         if ($(this).next(".accordion-content").is(':visible')) {

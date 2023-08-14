@@ -15,6 +15,9 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[siteSearchInclude]
+
 ==
 <?php
 use Pensoft\Media\Models\Newsletters;
@@ -48,7 +51,7 @@ return Redirect::to('/newsletters');
 }
 ?>
 ==
-
+{% component 'siteSearchInclude' %}
 {% if newsletters.count %}
 
 <div class="container">

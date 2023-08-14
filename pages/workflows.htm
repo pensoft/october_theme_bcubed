@@ -22,7 +22,9 @@ description_limit = 0
 
 [siteSearchInclude]
 ==
+
 {% component 'siteSearchInclude' %}
+
 <!-- Intro -->
 {% component 'workflows-intro' %}
 
@@ -30,10 +32,11 @@ description_limit = 0
 {% component 'workflows-cubes' %}
 
 <script>
-    $(document).ready(function() {
-        $('.text').click(function() {
-            $(this).toggleClass('clicked');
-            $(this).next('.hidden-text').toggleClass('show-hidden-text');
-        });
+$(document).ready(function() {
+    $('.text').click(function() {
+        $(this).closest('.col-xs-12').toggleClass('toggled');
+        $(this).toggleClass('clicked');
+        $(this).next('.hidden-text').toggleClass('show-hidden-text');
     });
+});
 </script>

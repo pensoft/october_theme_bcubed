@@ -1,6 +1,5 @@
 #sortSelect {
     font-size: 14px !important;
-    border: 1px !important;
     border-radius: 4px !important;
     color: #BBBBBB;
 }
@@ -22,6 +21,10 @@
     .rounded(4px);
     position: relative;
     box-shadow: 0px 0px 10px #00595729;
+
+    &:hover {
+        box-shadow: 0px 6px 60px #00595757;
+    }
 
     .library-type-label {
         font-weight: bold;
@@ -88,13 +91,33 @@
 
     .dwn-button {
         position: absolute;
-        top: 80px;
-        right: 30px;
+        top: 169px;
+        right: 28px;
+        
+        i{
+            display: none;
+        }
 
-        p {
+        p{
             color: white !important;
         }
 
+        .breakpoint-small-down({
+            top: 0px;
+            right: 0px;
+            width: 53px !important;
+            height: 53px !important;
+            border-radius: 0px 4px 0px !important;
+
+            i {
+                display: flex;
+                margin-left: 16px;
+            }
+            p {
+                display: none;
+            }
+
+        });
     }
 
     .btn.btn-primary{
@@ -108,20 +131,16 @@
             line-height: unset!important;
         }
 
-        .breakpoint-small-down({
-            margin: 10px auto!important;
-            display: block;
-        });
+        // .breakpoint-small-down({
+        //     margin: 10px auto!important;
+        //     display: block;
+        // });
     }
 }
 
 .library h1.display-1{
     display: none;
 }
-
-// .library .p-download{
-
-// }
 
 .library .container{
 
@@ -269,7 +288,11 @@
     padding-bottom: 30px;
     width: 100%;
     display: block;
-    float: left;
+    // margin-left: 25%;
+
+    .breakpoint-small-down({
+        // margin-left: 30%;
+    });
 
     .btn-primary{
         .breakpoint-small-down({
@@ -316,3 +339,8 @@
     }
 }
 
+.tabs {
+    .breakpoint-small-down({
+        margin-left: 25%;
+    });
+}

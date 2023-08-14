@@ -23,6 +23,7 @@ background = "transperant"
 templates = "template3"
 description_limit = 0
 
+
 [siteSearchInclude]
 ==
 <?php
@@ -33,8 +34,8 @@ function onStart(){
 }
 ?>
 ==
-{% set records = mediaPressreleasesList %}
 {% component 'siteSearchInclude' %}
+{% set records = mediaPressreleasesList %}
 {% if records.count %}
 <div class="container">
 

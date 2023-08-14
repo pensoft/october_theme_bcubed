@@ -16,7 +16,9 @@ detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 
+[siteSearchInclude]
 ==
+
 <?php
 use Pensoft\Media\Models\Videos;
 use System\Models\File;
@@ -49,7 +51,7 @@ return Redirect::to('/media-center/videos');
 }
 ?>
 ==
-
+{% component 'siteSearchInclude' %}
 {% set records = mediaVideosList %}
 
 {% if records.count %}

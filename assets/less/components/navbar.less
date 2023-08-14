@@ -1,3 +1,17 @@
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
 
 .navbar {
     position: absolute;
@@ -75,14 +89,40 @@
 
     .navbar-nav{
       list-style-type: none;
+        .breakpoint-large-down({
+            visibility: hidden;
+        });
     }
 
     .dropdown{
-      .dropdown-menu{
-        background: @link-color;
-
+      .dropdown-menu {
+        background: @link-color !important;
+        animation: rotateX 500ms ease-in-out forwards;
+        transform-origin: top center;
+        opacity: 0;
+    
+        &:nth-of-type(1) {
+          animation-delay: 0ms;
+        }
+        &:nth-of-type(2) {
+          animation-delay: 160ms;
+        }
+        &:nth-of-type(3) {
+          animation-delay: 320ms;
+        }
+        &:nth-of-type(4) {
+          animation-delay: 480ms;
+        }
+        &:nth-of-type(5) {
+          animation-delay: 640ms;
+        }
+        &:nth-of-type(6) {
+          animation-delay: 800ms;
+        }
+        &:nth-of-type(7) {
+          animation-delay: 960ms;
+        }
       }
-
     }
 
     .navbar-collapse {
@@ -123,7 +163,6 @@
 
             .nav-item {
                 display: block;
-
                 padding-top: 0;
                 padding-bottom: 0;
                 padding-left: 0;
@@ -195,11 +234,10 @@
                     &.dropdown {
                          &:hover > .dropdown-menu {
                             display: block;
-
                         }
 
                         .dropdown-menu {
-                          display: none;
+                        display: none;
                         position: absolute;
                         line-height: 1.6em;
                         top: 66px;
@@ -539,7 +577,6 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-
                 }
                 &:hover{
                     background: @link-color;
@@ -551,6 +588,11 @@
     .search-btn{
         color: @black-color!important;
         background: none!important;
+
+        &:hover{
+          color: @light-color!important;
+        }
+
         &:before {
             content: "\ea82";
         }

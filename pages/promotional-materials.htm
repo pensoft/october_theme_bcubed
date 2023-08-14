@@ -14,7 +14,10 @@ noRecordsMessage = "No records found"
 detailsPage = "-"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[siteSearchInclude]
 ==
+
 <?php
 use Pensoft\Media\Models\Flyers;
 use System\Models\File;
@@ -48,6 +51,7 @@ return Redirect::to('/promotional-materials');
 }
 ?>
 ==
+{% component 'siteSearchInclude' %}
 <div class="container flyer">
     <div class="row">
         {% set records = mediaFlyersList %}
@@ -63,7 +67,7 @@ return Redirect::to('/promotional-materials');
         {% if record.flyer_image %}
         <div class="col-md-4 col-xs-12 center-xs">
             <h3><b>{{record.name}}</b></h3>
-            <p class="logo_container"><img src="{{record.flyer_image.path}}" title="{{record.name}}"></p>
+            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 307, { mode: 'crop' }) }}" title="{{record.name}}"></p>
 
             {% if record.file %}
             <div class="col-xs-12">
@@ -74,9 +78,6 @@ return Redirect::to('/promotional-materials');
                     {% if record.file_print %}
                     <a href="{{record.file_print.path}}#file_name={{record.file_print.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank">Download for print</a> &nbsp;
                     {% endif %}
-
-
-
                 </div>
             </div>
             {% endif %}
