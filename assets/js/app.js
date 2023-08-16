@@ -266,6 +266,8 @@ $(document).ready(function() {
                 });
             }
         });
+
+        $('.library .btn-primary').html('<i class="pr normal p-download"></i>');
     }
 
 });
