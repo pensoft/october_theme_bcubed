@@ -1,4 +1,4 @@
-url = "/partners/:code?|[a-zA-Z\-0-9]"
+url = "/partners/:code?|[a-zA-Z\-0-9]+"
 layout = "default"
 title = "Partners"
 is_hidden = 0
@@ -15,11 +15,21 @@ use Pensoft\Cardprofiles\Models\Profiles;
 use Rainlab\Location\Models\Country;
 
 function onStart(){
-	$this['partners'] =  Partners::where('type', 1)->get();
+    $this['partners'] =  Partners::where('type', 1)->get();
     $this['is_detail_page'] = false;
     if($this->param('code')){
-        $this['partners'] =  Partners::whereRaw('country_code ILIKE \'%'.$this->param('code').'%\'')->where('type', 1)->get();
-        $this['country'] =  Country::where('code', $this->param('code'))->where('is_enabled', true)->first();
+        $country = Country::where('code', $this->param('code'))->where('is_enabled', true)->first();
+        
+        if($country){
+            $this['partners'] =  Partners::whereRaw('country_code ILIKE \'%'.$this->param('code').'%\'')->where('type', 1)->get();
+            $this['country'] = $country;
+        } else {
+            $this['partners'] = Partners::where('id', $this->param('code'))->where('type', 1)->get();
+            $this['country'] = new class {
+                public $name = "Partner";
+            };
+        }
+
         $this['is_detail_page'] = true;
     }
     $this['members'] = Profiles::where('category_id',  3)->get();
@@ -30,7 +40,9 @@ function onStart(){
             return Profiles::where('partner_id', $id)->where('category_id',  3)->get();
         }
     };
+
 }
+
 
 ?>
 ==
@@ -155,7 +167,6 @@ function onStart(){
         </div>
         {% endfor %}
     </div>
-
 </div>
 {% endif %}
 
