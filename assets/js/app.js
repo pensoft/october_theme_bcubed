@@ -25,7 +25,7 @@ $(document).ready(function() {
     $("nav").removeClass("no-transition");
 
     $('.work_packages .accordion-content, .partners-insider .accordion-toggle, .messages .accordion-toggle').each(function( index, value ) {
-        $(value).find('a').attr( "onclick", "window.open(this.href, '_blank');" )
+        $(value).find('a').attr( "onclick", "window.open(this.href, '_self');" )
     });
 
 	onHashChange();
