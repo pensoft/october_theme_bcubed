@@ -4,7 +4,7 @@ title = "Newsletters"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
-header_image = "about.jpg"
+header_image = "about-header-.jpg"
 
 [builderList mediaNewsletterList]
 modelClass = "pensoft\Media\Models\Newsletters"
@@ -54,42 +54,35 @@ return Redirect::to('/newsletters');
 {% component 'siteSearchInclude' %}
 {% if newsletters.count %}
 
-<div class="container">
-    <div class="row">
+<div class="container newsletter-container">
+    <div class="row between-md around-xs">
         {% for record in newsletters %}
-        <div class="col-md-3 col-xs-12">
-            <div class="text-center">
-                <span class="card_image_container" style="background: url({{record.newsletter_image.thumb(380,240,{'mode':'crop'})}}) center center no-repeat;" title="{{record.name}}"></span>
-                <span class="card_title" style="min-height: 100px;">{{record.name}}</span>
+            <div class="col-md-4 col-xs-12 text-center newsletters-card mb-3">
+                <div class="newsletter-card-image-container" style="background: url({{record.newsletter_image|resize(380, 220,{ mode: 'crop' })}}) center center no-repeat;" title="{{record.name}}"></div>
+                <p class="newsletters-card-date mt-2">{{ record.date|date("F Y") }}</p>
+                <p class="newsletters-card-title " style="min-height: 80px;">{{record.name}}</p>
+                {% if record.url %}
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        <a class="link btn btn-primary btn-newsletters" style="max-width: unset" href="{{record.url}}" target="_blank">Read the newsletter</a>
+                    </div>
+                </div>
+                {% else %}
                 {% if record.file %}
                 <div class="col-xs-12">
                     <div class="text-center">
-
-
-                        <a class="link btn btn-primary mb-1 mt-1" style="max-width: unset" href="{{record.url}}" target="_blank">Read the newsletter</a>
-
-                        {{form_open({ request: 'onDownloadFile' }) }}
-                        <input type="hidden" value="{{record.file.id}}" name="id">
-                        <button type="submit" class="btn btn-primary" data-attach-loading>Download <i class="pr p-download"></i></button>
-                        {{ form_close() }}
-
+                        <a class="link btn btn-primary btn-newsletters" style="max-width: unset" href="{{ '/newsletters?download=' ~ record.file.id ~ '&file_name=' ~ record.name|url_encode }}">Download the newsletter</a>
                     </div>
                 </div>
                 {% endif %}
-
+                {% endif %}
             </div>
-        </div>
-
         {% endfor %}
     </div>
 </div>
 
 {% else %}
-<div class="container-fluid bg-newsletter">
-    <div class="container">
-        <iframe src="https://dashboard.mailerlite.com/forms/457412/91683683093710364/share" width="400" height="843" title="Subscribe"></iframe>
-    </div>
-</div>
+<script>
+    window.location.href = 'https://dashboard.mailerlite.com/forms/457412/91683683093710364/share';
+</script>
 {% endif %}
-
-
