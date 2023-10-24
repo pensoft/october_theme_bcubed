@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3865" data-name="Rectangle 3865" width="35.984" height="36.286" transform="translate(-4 -4)" fill="none" stroke="#6cddb4" stroke-width="1.5"/>
+    </clipPath>
+  </defs>
+  <g id="Group_19921" data-name="Group 19921" transform="translate(-105 -2651)">
+    <rect id="Rectangle_3850" data-name="Rectangle 3850" width="45" height="45" rx="4" transform="translate(105 2651)" fill="#005957"/>
+    <g id="Group_17400" data-name="Group 17400" transform="translate(114.016 2658.714)">
+      <g id="Group_17399" data-name="Group 17399" clip-path="url(#clip-path)">
+        <circle id="Ellipse_55" data-name="Ellipse 55" cx="12.351" cy="12.351" r="12.351" transform="translate(0.082 3.501)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_27291" data-name="Path 27291" d="M24.016,53.248a8.478,8.478,0,1,0,8.478-8.478A8.478,8.478,0,0,0,24.016,53.248Z" transform="translate(-20.06 -37.396)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_27292" data-name="Path 27292" d="M52.93,77.4a3.715,3.715,0,1,0,3.715-3.715A3.715,3.715,0,0,0,52.93,77.4Z" transform="translate(-44.211 -61.548)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+        <line id="Line_93" data-name="Line 93" y1="13.705" x2="13.705" transform="translate(12.32 1.959)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_27293" data-name="Path 27293" d="M133,3.748l-.418-2.7L129.163,4.47l.006,3.11Z" transform="translate(-107.888 -0.878)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Path_27294" data-name="Path 27294" d="M133.031,17.428l2.7.418-3.419,3.419-3.11-.006Z" transform="translate(-107.918 -14.557)" fill="none" stroke="#6cddb4" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

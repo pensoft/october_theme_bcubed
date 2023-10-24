@@ -1019,19 +1019,310 @@ now override the 3.3 new styles for modern browsers & apply opacity
     font-family: 'PT Sans Narrow';
     font-size: 18px;
 }
-//
-//@media (min-width: 1280px) {
-//    .col-md-4 {
-//        flex-basis: 31.33% !important;
-//        max-width: 31.33% !important;
-//        margin: 0 1% 2% 1% !important;
-//    }
-//}
-//
-//@media (min-width: 1024px) and (max-width: 1279px) {
-//    .col-md-4 {
-//        flex-basis: 30.66% !important;
-//        max-width: 30.66% !important;
-//        margin: 0 1% 2% 1% !important;
-//    }
-//  }
+
+.hackathon{
+    color: #1B1B2D;
+    font-size: 18px;
+    line-height: 24px;
+
+
+    .objectives_h{
+        h2{
+            color: @footer-link-color;
+            font-size: 32px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    p{
+        line-height: 1.5em;
+        font-family: "PT Sans Caption";
+    }
+
+    h1{
+        color: @footer-link-color;
+        font-size: 32px;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        font-family: "PT Sans Narrow";
+        font-weight: bold;
+    }
+    .hackathon_secondary_background{
+         //height: calc(~'100vh - 250px');
+        min-height: 650px;
+         background: #e7f2f2 url("../../assets/images/hackathon-banner.jpg") center no-repeat;
+         background-size: 90%;
+         display: flex;
+         align-items: center;
+         font-size: 36px;
+         line-height: 46px;
+         color: @footer-link-color!important;
+         font-weight: bold;
+         font-family: "PT Sans Narrow";
+        .breakpoint-large-down({
+            background: #e7f2f2;
+        });
+         .container{
+             max-width: 80%;
+             padding: 0;
+             .breakpoint-large-down({
+                 max-width: 99%;
+             });
+         }
+         h1{
+             font-size: 52px;
+             line-height: 46px;
+             color: @footer-link-color;
+             margin-bottom: 50px;
+             font-family: 'PT Sans Narrow';
+         }
+         strong, b{
+             color: @link-color;
+         }
+         p{
+             color: @footer-link-color!important;
+             margin-bottom: 10px;
+         }
+     }
+
+    .the_hackathon{
+        font-size: 18px;
+        font-family: "PT Sans Caption";
+        line-height: 24px;
+        h2{
+            color: @footer-link-color;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin: 40px 0 20px 0;
+        }
+        strong, b{
+            color: @link-color;
+            font-size: 22px;
+        }
+    }
+
+    .secondary_background.hackathon{
+        h1{
+            color: @footer-link-color;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+        p{
+            font-family: "PT Sans Caption";
+        }
+
+        .tabsl_like{
+            display: inline;
+            margin-left: 31px;
+            background: @link-color;
+            color: @footer-link-color;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 60px;
+            width: 160px;
+            flex-basis: 160px;
+            max-width: 100%;
+            .breakpoint-large-down({
+                margin: 0 auto 20px auto;
+                flex-basis: 200px;
+            });
+        }
+
+        ul{
+            font-family: "PT Sans Caption";
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            .breakpoint-large-down({
+                display: flex;
+                flex-direction: column;
+            });
+            p{
+                margin-bottom: 0;
+                font-size: 18px;
+                font-weight: bold;
+                color: @footer-link-color;
+            }
+
+            li{
+                margin-bottom: 50px;
+                &::before {
+                    content: " ";
+                    display: flex;
+                    float: left;
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    background: url("../../assets/images/check-square.svg") left no-repeat;
+                    background-size: contain;
+                    margin-right: 10px;
+                    .breakpoint-large-down({
+                        background-size: 18px;
+                        background-position-y: 3px;
+                        margin-right: 10px;
+                        width: 20px;
+                        height: 65px;
+                        display: block;
+                    });
+                }
+                ul{
+                    margin-top: 20px;
+                    li{
+                        margin-bottom: 20px;
+                        display: flex;
+                        p{
+                            font-size: 16px;
+                            font-weight: normal;
+                            color: #2f2f2f!important;
+                            .breakpoint-large-down({
+                                padding-left: 20px;
+                            });
+                        }
+                        &::before {
+                            background: @link-color;
+                            width: 12px;
+                            height: 12px;
+                            margin-top: 4px;
+                            margin-left: 31px;
+                            .breakpoint-large-down({
+                                position: absolute;
+                                margin-left: 0;
+                            });
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .expenses{
+        h2{
+            text-align: center;
+            color: @footer-link-color;
+            font-size: 20px!important;
+            font-weight: bold;
+            font-family: "PT Sans Caption";
+            margin-top: 40px;
+        }
+
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            .breakpoint-large-down({
+                flex-direction: column;
+            });
+            li{
+                display: inline;
+                background: @link-color;
+                padding: 15px 25px;
+                text-align: center;
+                margin: 0 20px;
+                .breakpoint-large-down({
+                    margin: 20px;
+                });
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .how {
+        .container{
+            padding: 0;
+        }
+        h2 {
+            font-family: "PT Sans Caption";
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left !important;
+            background: @footer-link-color;
+            color: white;
+            padding: 17px 30px 12px 30px;
+            margin-bottom: 60px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 37px auto;
+                width: 0;
+                height: 0;
+                border-top: 25px solid @footer-link-color;
+                border-left: 31px solid transparent;
+                border-right: 31px solid transparent;
+            }
+        }
+
+        ul{
+            font-family: "PT Sans Caption";
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li{
+                margin-bottom: 0px;
+                p{
+                    font-size: 18px;
+                    font-weight: normal;
+                    color: #2f2f2f!important;
+                    margin-bottom: 10px;
+                    .breakpoint-large-down({
+                        padding-left: 20px;
+                    });
+                }
+                &::before {
+                    content: " ";
+                    display: flex;
+                    float: left;
+                    position: relative;
+                    background: @link-color;
+                    width: 12px;
+                    height: 12px;
+                    margin-top: 5px;
+                    margin-left: 4px;
+                    margin-right: 8px;
+                    .breakpoint-large-down({
+                        position: absolute;
+                        margin-left: 0;
+                    });
+                }
+            }
+        }
+
+    }
+
+    .venue{
+        strong, b{
+            color: @link-color;
+            font-size: 22px;
+        }
+        .address{
+            background: #EBF8F7;
+            display: flex;
+            padding: 0;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            width: 850px;
+            max-width: 100%;
+
+            .col-xs-12{
+                padding: 0;
+                p{
+                    padding-left: 50px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+

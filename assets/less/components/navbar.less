@@ -100,7 +100,7 @@
         animation: rotateX 500ms ease-in-out forwards;
         transform-origin: top center;
         opacity: 0;
-    
+
         &:nth-of-type(1) {
           animation-delay: 0ms;
         }
@@ -171,11 +171,23 @@
                 cursor: pointer;
                 text-align: center;
 
+                &.hackathon_picker{
+                    color: @footer-link-color;
+                    background: @link-color;
+                    border-radius: 7px;
+                    &:hover, &.active {
+                        a{
+                            color: white!important;
+                        }
+
+                    }
+                }
+
                 &>a {
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
-                    padding-top: 0.4rem;
-                    padding-bottom: 0.2rem;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
                     margin-left: 0.4rem;
                     margin-right: 0.4rem;
                     white-space: nowrap;

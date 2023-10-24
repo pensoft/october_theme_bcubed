@@ -55,7 +55,7 @@ $(document).ready(function() {
 	$('.country_map').attr('data-aos', 'fade-up');
 	$('.partner-item').attr('data-aos', 'fade-up');
     // $('.background_bg').attr('data-aos', 'fade-up');
-    
+
 	// media
 	$('.flyer_image_container img').attr('data-aos', 'fade-up');
 	$('.broshure_and_poster img').attr('data-aos', 'fade-up');
@@ -232,7 +232,7 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.work_packages .accordion-toggle', function () {
+    $('body').on('click', '.work_packages .accordion-toggle, .objectives_h .accordion-toggle', function () {
         if ($(this).next(".accordion-content").is(':visible')) {
             $(this).next(".accordion-content").slideUp(300);
             $(this).children(".plusminus").html('<span class="plus"></span>');
@@ -269,6 +269,12 @@ $(document).ready(function() {
 
         $('.library .btn-primary').html('<i class="pr normal p-download"></i>');
     }
+
+    $('.nav-item').each(function (){
+        if($(this).text().trim() == 'Hackathon'){
+            $(this).addClass('hackathon_picker');
+        }
+    });
 
 });
 

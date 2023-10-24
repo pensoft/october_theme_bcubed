@@ -1,0 +1,92 @@
+url = "/b-cubed-hackathon"
+layout = "default"
+title = "B-Cubed Hackathon"
+
+[siteSearchInclude]
+
+[jumbotron event_banner]
+jumbotron = "hackathon"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron the_hackathon]
+jumbotron = "the_hackathon"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron focus]
+jumbotron = "focus"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[accordion objectives]
+maxItems = 20
+accordion = 2
+elementId = "objectives"
+active = 0
+collapsible = "false"
+heightStyle = "auto"
+iconsHeader = "ui-icon-triangle-1-e"
+iconsHeaderActive = "ui-icon-triangle-1-s"
+templates = "template5"
+
+[jumbotron expenses]
+jumbotron = "expenses"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron how]
+jumbotron = "how-does-it-work"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron venue]
+jumbotron = "venue"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+==
+{% component 'siteSearchInclude' %}
+<div class="container-fluid hackathon_secondary_background">
+    <div class="container">
+        {% component 'event_banner' %}
+    </div>
+</div>
+
+<div class="container the_hackathon">
+        {% component 'the_hackathon' %}
+</div>
+    
+<!-- focus -->
+<div class="container-fluid secondary_background hackathon">
+    <div class="container">
+        {% component 'focus' %}
+    </div>
+</div>
+
+<div class="container objectives_h">
+        {% component 'objectives' %}
+    </div>
+
+<div class="container-fluid secondary_background expenses">
+    <div class="container">
+        {% component 'expenses' %}
+    </div>
+</div>
+
+<div class="container how">
+        {% component 'how' %}
+    </div>
+
+    <div class="container venue">
+        {% component 'venue' %}
+    </div>

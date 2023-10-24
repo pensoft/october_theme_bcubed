@@ -230,20 +230,135 @@
     });
 
 }
-.pilots .green_bullet{
-    // background: @white-color url("../../assets/images/location_pilots.svg") center no-repeat;
-    // background-size: 22px;
-    width: 55px!important;
-    height: 55px!important;
-    .rounded(50%);
-    flex-basis: unset;
+
+.objectives_h .projects_services{
+    display: flex;
+    justify-content: space-between;
+
+}
+.objectives_h .accordion-border{
+    border-radius: 4px;
+    box-shadow: 0px 0px 30px #0059571A;
+    padding: 0px!important;
+    margin: 0 0 32px 0!important;
+    cursor: pointer;
+    background: #FFFFFF!important;
+    .rounded(4px);
+    font-size: 18px;
+    //font-family: PT Sans Narrow;
+    .breakpoint-small-down({
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    });
 }
 
-.pilots .ui-accordion-header.col-md-6.col-xs-12{
-    width: 100%!important;
-    flex-basis: 100%!important;
-    max-width: 100%!important;
+.objectives_h .accordion-toggle{
+    background: none;
+    border: none;
+    border-radius: unset;
+    padding: 0;
+    color: @footer-link-color;
+    font-family: "PT Sans Narrow";
+     font-weight: bold;
+    font-size: 20px;
+    .breakpoint-large-down({
+        font-size: 17px;
+    });
+
 }
+.objectives_h .accordion-content{
+    padding: 20px;
+    line-height: 1.5em!important;
+    //width: 100%!important;
+    font-size: 18px;
+    //font-family: PT Sans Narrow;
+}
+
+.objectives_h .accordion-content p{
+    .breakpoint-large-down({
+        padding: 0!important;
+        text-align: left!important;
+    });
+}
+
+.objectives_h .plusminus{
+    max-width: 35px;
+    height: 35px;
+    text-align: right;
+    vertical-align: middle;
+    color: @link-color;
+
+    .plus, .minus{
+        text-align: center;
+        vertical-align: middle;
+        color: #6CDDB4;
+        font-size: 30px;
+        //font-family: PT Sans Narrow;
+    }
+
+    .plus::before{
+        content: ' ';
+        background: url("../../assets/images/arrow down.svg") no-repeat;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+        background-size: 16px;
+        left: -10px;
+    }
+    .minus::before{
+        content: ' ';
+        background: url("../../assets/images/arrow down.svg") no-repeat;
+        transform: rotate(180deg);
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+        background-size: 16px;
+        left: -10px;
+        top: -10px;
+    }
+}
+
+.objectives_h .green_bullet{
+    background: url("../../assets/images/objects-icon.svg") center no-repeat;
+    width: 87px!important;
+    max-width: 87px!important;
+    height: 87px;
+    line-height: 87px;
+    background-size: 63%;
+    padding: 0;
+    margin: 0 10px 0 0px;
+    text-align: center;
+    flex-basis: unset;
+    font-size: 18px!important;
+    //font-family: PT Sans Narrow;
+    font-weight: bold;
+
+    .breakpoint-small-down({
+        width: 67px!important;
+        max-width: 67px!important;
+        height: 67px;
+        line-height: 67px;
+        margin: 0 0px 0 0px;
+    });
+
+}
+//.pilots .green_bullet{
+//    // background: @white-color url("../../assets/images/location_pilots.svg") center no-repeat;
+//    // background-size: 22px;
+//    width: 55px!important;
+//    height: 55px!important;
+//    .rounded(50%);
+//    flex-basis: unset;
+//}
+//
+//.pilots .ui-accordion-header.col-md-6.col-xs-12{
+//    width: 100%!important;
+//    flex-basis: 100%!important;
+//    max-width: 100%!important;
+//}
 
 #ui-id-1,
 #ui-id-2,
