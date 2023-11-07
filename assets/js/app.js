@@ -276,6 +276,18 @@ $(document).ready(function() {
         }
     });
 
+    $('a[href^="#"]').click(function() {
+      var target = $(this.hash);
+      if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
+      if (target.length == 0) target = $('html');
+      if (width < 1000) { // mobile
+        $('html, body').animate({ scrollTop: target.offset().top-400 }, 1000);
+      }else{
+          $('html, body').animate({ scrollTop: target.offset().top-223 }, 1000);
+      }
+      return false;
+  });
+
 });
 
 function showHideWP(target){
@@ -926,6 +938,9 @@ function init() {
         // keepFooter(documentHasScroll());
 
     });
+
+    // document.addEventListener('touchstart', 'onMouseUp', {passive: true});
+
     // appendProfile()
     appendSignIn()
     appendSignOut()

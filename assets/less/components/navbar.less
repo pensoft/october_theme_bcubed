@@ -29,6 +29,7 @@
 
     a {
         color: @navbar-font-color;
+        
     }
 
     &.fixed {
@@ -175,6 +176,10 @@
                     color: @footer-link-color;
                     background: @link-color;
                     border-radius: 7px;
+                    margin-right: 41px;
+                    .breakpoint-large-down({
+                        margin-right: 0;
+                    });
                     &:hover, &.active {
                         a{
                             color: white!important;
@@ -182,6 +187,9 @@
 
                     }
                 }
+               &:not(.social) a{
+                       font-family: 'PT Sans Caption';
+               }
 
                 &>a {
                     padding-left: 0.5rem;

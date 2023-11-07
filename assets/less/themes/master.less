@@ -1025,6 +1025,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
     font-size: 18px;
     line-height: 24px;
 
+    // .container{
+    //     padding-top: 0!important;
+    // }
 
     .objectives_h{
         h2{
@@ -1066,7 +1069,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
             background: #e7f2f2;
         });
          .container{
-             max-width: 80%;
+             max-width: 60%;
              padding: 0;
              .breakpoint-large-down({
                  max-width: 99%;
@@ -1092,6 +1095,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
         font-size: 18px;
         font-family: "PT Sans Caption";
         line-height: 24px;
+        padding-top: 0;
         h2{
             color: @footer-link-color;
             font-size: 32px;
@@ -1102,9 +1106,12 @@ now override the 3.3 new styles for modern browsers & apply opacity
             color: @link-color;
             font-size: 22px;
         }
+        .container{
+            padding: 0;
+        }
     }
 
-    .secondary_background.hackathon{
+    .secondary_background.focus{
         h1{
             color: @footer-link-color;
             font-size: 32px;
@@ -1160,6 +1167,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
                     background: url("../../assets/images/check-square.svg") left no-repeat;
                     background-size: contain;
                     margin-right: 10px;
+                    margin-top: 3px;
                     .breakpoint-large-down({
                         background-size: 18px;
                         background-position-y: 3px;
@@ -1186,7 +1194,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
                             background: @link-color;
                             width: 12px;
                             height: 12px;
-                            margin-top: 4px;
+                            margin-top: 7px;
                             margin-left: 31px;
                             .breakpoint-large-down({
                                 position: absolute;
@@ -1201,6 +1209,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
     }
 
     .expenses{
+        .container{
+            padding-top: 0!important;
+        }
         h2{
             text-align: center;
             color: @footer-link-color;
@@ -1287,7 +1298,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
                     background: @link-color;
                     width: 12px;
                     height: 12px;
-                    margin-top: 5px;
+                    margin-top: 7px;
                     margin-left: 4px;
                     margin-right: 8px;
                     .breakpoint-large-down({
@@ -1301,6 +1312,10 @@ now override the 3.3 new styles for modern browsers & apply opacity
     }
 
     .venue{
+        padding-top: 0;
+        .container{
+            padding: 0;
+        }
         strong, b{
             color: @link-color;
             font-size: 22px;
@@ -1322,6 +1337,54 @@ now override the 3.3 new styles for modern browsers & apply opacity
                     margin-bottom: 10px;
                 }
             }
+        }
+    }
+
+    .focus{
+        .container{
+            padding-top: 0!important;
+        }
+    }
+
+    .table-contents{
+         background: white;
+         position: sticky;
+            top: 100px; 
+            padding-top: 50px;
+            z-index: 9;
+        .container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+                  
+            
+            // padding: 50px 0 0 0;
+            .breakpoint-huge-down({
+                flex-wrap: wrap;
+                position: inherit!important;
+            //    flex-direction: column;
+           });
+
+        }
+        
+
+        
+        a{
+            background: #6cddb4!important;
+            border-radius: 7px;
+            display: inline;
+            padding: 7px 18px;
+            color: white !important;
+            margin: 0 10px;
+           &:hover{
+               color: @footer-link-color!important;
+           }
+
+            .breakpoint-huge-down({
+               margin: 10px;
+           });
+           
         }
     }
 }

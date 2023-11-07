@@ -56,9 +56,20 @@ templates = "template3"
 description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
+
 <div class="container-fluid hackathon_secondary_background">
     <div class="container">
         {% component 'event_banner' %}
+    </div>
+</div>
+<div class="container-fluid table-contents">
+    <div class="container">
+        <a href="#the-hackathon">The Hackathon</a>
+        <a href="#focus">Focus</a>
+        <a href="#objective">Objectives</a>
+        <a href="#expenses">Expenses</a>
+        <a href="#how">How does it work</a>
+        <a href="#venue">Venue</a>
     </div>
 </div>
 
@@ -67,26 +78,26 @@ description_limit = 0
 </div>
     
 <!-- focus -->
-<div class="container-fluid secondary_background hackathon">
+<div class="container-fluid secondary_background focus" id="focus">
     <div class="container">
         {% component 'focus' %}
     </div>
 </div>
 
-<div class="container objectives_h">
+<div class="container objectives_h" id="objective">
         {% component 'objectives' %}
     </div>
 
-<div class="container-fluid secondary_background expenses">
+<div class="container-fluid secondary_background expenses" id="expenses">
     <div class="container">
         {% component 'expenses' %}
     </div>
 </div>
 
-<div class="container how">
+<div class="container how" id="how">
         {% component 'how' %}
     </div>
 
-    <div class="container venue">
+    <div class="container venue" id="venue">
         {% component 'venue' %}
     </div>
