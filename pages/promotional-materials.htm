@@ -17,7 +17,6 @@ pageNumber = "{{ :page }}"
 
 [siteSearchInclude]
 ==
-
 <?php
 use Pensoft\Media\Models\Flyers;
 use System\Models\File;
@@ -67,7 +66,7 @@ return Redirect::to('/promotional-materials');
         {% if record.flyer_image %}
         <div class="col-md-4 col-xs-12 center-xs">
             <h3><b>{{record.name}}</b></h3>
-            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 307, { mode: 'crop' }) }}" title="{{record.name}}"></p>
+            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 268, { mode: 'crop' }) }}" title="{{record.name}}"></p>
 
             {% if record.file %}
             <div class="col-xs-12">
