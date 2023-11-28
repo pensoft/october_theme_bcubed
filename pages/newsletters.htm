@@ -23,7 +23,7 @@ use Pensoft\Media\Models\Newsletters;
 use System\Models\File;
 
 function onStart(){
-	$this['newsletters'] =  Newsletters::get();
+	$this['newsletters'] =  Newsletters::orderBy('date', 'desc')->get();
 	if(get('download')){
 		$file = File::find((int)get('download'));
 		$file_name = $file->getLocalPath();
@@ -54,7 +54,7 @@ return Redirect::to('/newsletters');
 {% if newsletters.count %}
 
 <div class="container newsletter-container">
-    <div class="row between-md around-xs">
+    <div class="row around-xs">
         {% for record in newsletters %}
             <div class="col-md-4 col-xs-12 text-center newsletters-card mb-3">
                 <div class="newsletter-card-image-container" style="background: url({{record.newsletter_image|resize(380, 220,{ mode: 'crop' })}}) center center no-repeat;" title="{{record.name}}"></div>
