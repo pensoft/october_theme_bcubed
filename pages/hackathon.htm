@@ -11,7 +11,7 @@ templates = "template3"
 description_limit = 0
 
 [jumbotron the_hackathon]
-jumbotron = "the_hackathon"
+jumbotron = "the_hackathon_intro"
 background = "transperant"
 templates = "template3"
 description_limit = 0
@@ -54,6 +54,19 @@ title = 1
 background = "transperant"
 templates = "template3"
 description_limit = 0
+
+[jumbotron the_hackathon_banner]
+jumbotron = "hackathon-banner"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron the_hackathon_txt]
+jumbotron = "hackathon_text"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 
@@ -65,6 +78,7 @@ description_limit = 0
 <div class="container-fluid table-contents">
     <div class="container">
         <a href="#the-hackathon">The Hackathon</a>
+        <a href="#projects">Projects</a>
         <a href="#focus">Focus</a>
         <a href="#objective">Objectives</a>
         <a href="#expenses">Expenses</a>
@@ -76,6 +90,20 @@ description_limit = 0
 <div class="container the_hackathon">
         {% component 'the_hackathon' %}
 </div>
+
+<div class="container-fluid the_hackathon_banner" id="banner">
+    <div class="container">
+            {% component 'the_hackathon_banner' %}
+    </div>
+</div>
+
+<div class="container the_hackathon">
+        {% component 'the_hackathon_txt' %}
+</div>
+
+<div class="container projects_h" id="projects">
+        
+    </div>
     
 <!-- focus -->
 <div class="container-fluid secondary_background focus" id="focus">
