@@ -23,16 +23,6 @@ background = "transperant"
 templates = "template3"
 description_limit = 0
 
-[accordion objectives]
-maxItems = 20
-accordion = 2
-elementId = "objectives"
-active = 0
-collapsible = "false"
-heightStyle = "auto"
-iconsHeader = "ui-icon-triangle-1-e"
-iconsHeaderActive = "ui-icon-triangle-1-s"
-templates = "template5"
 
 [jumbotron expenses]
 jumbotron = "expenses"
@@ -67,6 +57,16 @@ title = 0
 background = "transperant"
 templates = "template3"
 description_limit = 0
+
+==
+<?php
+use Pensoft\Accordions\Models\Item as Accordion;
+
+function onStart(){
+    $this['projects'] = Accordion::where('category_id', 3)->get();
+    $this['objectives'] = Accordion::where('category_id', 2)->get();
+}
+?>
 ==
 {% component 'siteSearchInclude' %}
 
@@ -102,9 +102,28 @@ description_limit = 0
 </div>
 
 <div class="container projects_h" id="projects">
-        
+    <h2 class="underline aos-init aos-animate" data-aos="fade-up">The projects</h2>
+    <div id="projects_s" class="row projects_services text-left relative top-xs ui-accordion ui-widget ui-helper-reset" role="tablist">
+        {% for pk, project in projects %}
+        <div class="accordion-border key_{{pk}}"><!-- 1 --><!-- css 1 -->
+            <div class="row middle-xs accordion-toggle">
+                <div class="col-xs-2 green_bullet">{{project.prefix}}</div>
+
+                <div class="col-xs start-xs">{{project.title}}</div>
+
+                <div class="col-xs-2 end-xs plusminus"><span class="plus"></span></div>
+            </div>
+
+            <div class="accordion-content" style="display: none;">
+                {{project.body|raw}}
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    
+</div>
+
+
+
 <!-- focus -->
 <div class="container-fluid secondary_background focus" id="focus">
     <div class="container">
@@ -112,9 +131,29 @@ description_limit = 0
     </div>
 </div>
 
+
 <div class="container objectives_h" id="objective">
-        {% component 'objectives' %}
+    <h2 class="underline aos-init" data-aos="fade-up">OBJECTIVES</h2>
+    <div id="objectives" class="row projects_services text-left relative top-xs ui-accordion ui-widget ui-helper-reset" role="tablist">
+        {% for ok, objective in objectives %}
+        <div class="accordion-border key_{{ok}}"><!-- 1 --><!-- css 1 -->
+            <div class="row middle-xs accordion-toggle">
+                <div class="col-xs-2 green_bullet"></div>
+
+                <div class="col-xs start-xs">{{objective.title}}</div>
+
+                <div class="col-xs-2 end-xs plusminus"><span class="plus"></span></div>
+            </div>
+
+            <div class="accordion-content" style="display: none;">
+                {{objective.body|raw}}
+            </div>
+        </div>
+        {% endfor %}
     </div>
+</div>
+
+
 
 <div class="container-fluid secondary_background expenses" id="expenses">
     <div class="container">

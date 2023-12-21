@@ -288,6 +288,15 @@ $(document).ready(function() {
       return false;
   });
 
+
+    if (width >= 1024) {
+        $('.objectives_h .key_1, .objectives_h .key_3, .objectives_h .key_5, .objectives_h .key_7, .objectives_h .key_9, .objectives_h .key_11, .objectives_h .key_13').wrapAll('<div class="col-md-6 col-xs-12" />');
+        $('.objectives_h .key_0, .objectives_h .key_2, .objectives_h .key_4, .objectives_h .key_6, .objectives_h .key_8, .objectives_h .key_10, .objectives_h .key_12').wrapAll('<div class="col-md-6 col-xs-12" />');
+
+        $('.projects_h .key_1, .projects_h .key_3, .projects_h .key_5, .projects_h .key_7, .projects_h .key_9, .projects_h .key_11, .projects_h .key_13').wrapAll('<div class="col-md-6 col-xs-12" />');
+        $('.projects_h .key_0, .projects_h .key_2, .projects_h .key_4, .projects_h .key_6, .projects_h .key_8, .projects_h .key_10, .projects_h .key_12').wrapAll('<div class="col-md-6 col-xs-12" />');
+    }
+
 });
 
 function showHideWP(target){
@@ -966,7 +975,7 @@ function init() {
                 this.querySelector(".play-button").style.display = "none";
             });
         });
-        
+
 
     });
 
