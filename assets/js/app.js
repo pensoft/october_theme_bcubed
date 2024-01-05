@@ -232,7 +232,7 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.work_packages .accordion-toggle, .objectives_h .accordion-toggle', function () {
+    $('body').on('click', '.work_packages .accordion-toggle, .objectives_h .accordion-toggle, .projects_h .accordion-toggle', function () {
         if ($(this).next(".accordion-content").is(':visible')) {
             $(this).next(".accordion-content").slideUp(300);
             $(this).children(".plusminus").html('<span class="plus"></span>');
@@ -283,7 +283,7 @@ $(document).ready(function() {
       if (width < 1000) { // mobile
         $('html, body').animate({ scrollTop: target.offset().top-400 }, 1000);
       }else{
-          $('html, body').animate({ scrollTop: target.offset().top-223 }, 1000);
+          $('html, body').animate({ scrollTop: target.offset().top-303 }, 1000);
       }
       return false;
   });
