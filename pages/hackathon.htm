@@ -58,6 +58,40 @@ background = "transperant"
 templates = "template3"
 description_limit = 0
 
+[jumbotron how-apply]
+jumbotron = "how-apply"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron how-get-there]
+jumbotron = "how-get-there"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron accommodation-options]
+jumbotron = "accommodation-options"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron guidelines]
+jumbotron = "guidelines"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron general-contact]
+jumbotron = "general-contact"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
 ==
 <?php
 use Pensoft\Accordions\Models\Item as Accordion;
@@ -82,8 +116,9 @@ function onStart(){
         <a href="#focus">Focus</a>
         <a href="#objective">Objectives</a>
         <a href="#expenses">Expenses</a>
-        <a href="#how">How does it work</a>
         <a href="#venue">Venue</a>
+        <a href="#guidelines">Guidelines</a>
+        <a href="#general-contact">General Contact</a>
     </div>
 </div>
 
@@ -101,28 +136,39 @@ function onStart(){
         {% component 'the_hackathon_txt' %}
 </div>
 
-<div class="container projects_h" id="projects">
-    <h2 class="underline aos-init aos-animate" data-aos="fade-up">The projects</h2>
-    <div id="projects_s" class="row projects_services text-left relative top-xs ui-accordion ui-widget ui-helper-reset" role="tablist">
-        {% for pk, project in projects %}
-        <div class="accordion-border key_{{pk}}"><!-- 1 --><!-- css 1 -->
-            <div class="row middle-xs accordion-toggle">
-                <div class="col-xs-2 green_bullet">{{project.prefix}}</div>
-
-                <div class="col-xs start-xs">{{project.title}}</div>
-
-                <div class="col-xs-2 end-xs plusminus"><span class="plus"></span></div>
+<!-- The Projects -->
+<div class="container-fluid secondary_background">
+    <div class="container projects_h" id="projects">
+        <h2 class="underline aos-init aos-animate" data-aos="fade-up">The projects</h2>
+        <div id="projects_s" class="row projects_services text-left relative top-xs ui-accordion ui-widget ui-helper-reset" role="tablist">
+            {% for pk, project in projects %}
+            <div class="accordion-border key_{{pk}}"><!-- 1 --><!-- css 1 -->
+                <div class="row middle-xs accordion-toggle">
+                    <div class="col-xs-2 green_bullet">{{project.prefix}}</div>
+    
+                    <div class="col-xs start-xs">{{project.title}}</div>
+    
+                    <div class="col-xs-2 end-xs plusminus"><span class="plus"></span></div>
+                </div>
+    
+                <div class="accordion-content" style="display: none;">
+                    {{project.body|raw}}
+                </div>
             </div>
-
-            <div class="accordion-content" style="display: none;">
-                {{project.body|raw}}
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <a class="btn btn-primary">Find out more</a>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 
-
+<!-- How to apply -->
+<div class="container how-to-apply" id="how-apply">
+    {% component 'how-apply' %}
+</div>
 
 <!-- focus -->
 <div class="container-fluid secondary_background focus" id="focus">
@@ -155,16 +201,76 @@ function onStart(){
 
 
 
-<div class="container-fluid secondary_background expenses" id="expenses">
+<div class="container-fluid secondary_background expenses mb-3" id="expenses">
     <div class="container">
         {% component 'expenses' %}
     </div>
 </div>
 
-<div class="container how" id="how">
-        {% component 'how' %}
-    </div>
+<!-- Venue -->
+<div class="container venue" id="venue">
+    {% component 'venue' %}
+</div>
 
-    <div class="container venue" id="venue">
-        {% component 'venue' %}
+<!-- How to get there? -->
+<div class="container get-there" id="get-there" style="padding-top: 0; padding-bottom: 0;">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xs-12 text-center relative top-xs ui-accordion ui-widget ui-helper-reset" id="get-there">
+            <div class="accordion-border">
+                <div class="row middle-xs accordion-toggle justify-content-center">
+                    <div class="d-inline-flex align-items-center">
+                        <div class="text-nowrap">How to get there?</div>
+                        <div class="plusminus"><span class="plus"></span></div>
+                    </div>
+                </div>
+                <div class="accordion-content text-left" style="display: none;">
+                    {% component 'how-get-there' %}
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<!-- Accommodation Options -->
+<div class="container get-there" id="get-there" style="padding-top: 0; padding-bottom: 0;">
+    <div class="row d-flex justify-content-center">
+        <div id="get-there" class="col-xs-12 text-center relative top-xs ui-accordion ui-widget ui-helper-reset">
+            <div class="accordion-border">
+                <div class="row middle-xs accordion-toggle justify-content-center">
+                    <div class="d-inline-flex align-items-center">
+                        <div class="text-nowrap">Accommodation options</div>
+                        <div class="plusminus"><span class="plus"></span></div>
+                    </div>
+                </div>
+                <div class="accordion-content" style="display: none;">
+                    {% component 'accommodation-options' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid secondary_background">
+    <div class="guidelines" id="guidelines" style="padding-top: 0; padding-bottom: 0;">
+        <div class="row d-flex justify-content-center">
+            <div id="guidelines" class="col-xs-12 text-center relative top-xs ui-accordion ui-widget ui-helper-reset">
+                <div class="accordion-border">
+                    <div class="row middle-xs accordion-toggle justify-content-center">
+                        <div class="accordion-h d-inline-flex align-items-center">
+                            <div class="text-nowrap"><h1>Guidelines</h1></div>
+                            <div class="plusminus"><span class="plus"></span></div>
+                        </div>
+                    </div>
+                    <div class="accordion-content text-left" style="display: none;">
+                        {% component 'guidelines' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="general-contact">
+    {% component 'general-contact' %}
+</div>

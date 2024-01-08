@@ -1025,11 +1025,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
     font-size: 18px;
     line-height: 24px;
 
-    // .container{
-    //     padding-top: 0!important;
-    // }
-
-    .objectives_h{
+    .objectives_h, .projects_h, .how-to-apply{
         h2{
             color: @footer-link-color;
             font-size: 32px;
@@ -1038,17 +1034,11 @@ now override the 3.3 new styles for modern browsers & apply opacity
             display: block;
         }
     }
-
-    .projects_h{
-        h2{
-            color: @footer-link-color;
-            font-size: 32px;
-            text-transform: uppercase;
-            text-align: center;
-            display: block;
-        }
+    .how-to-apply{
+        text-align: center;
+        font: normal normal normal 18px/24px;
+        letter-spacing: 0px;
     }
-
     p{
         line-height: 1.5em;
         font-family: "PT Sans Caption";
@@ -1521,3 +1511,63 @@ now override the 3.3 new styles for modern browsers & apply opacity
     }
 }
 
+.banner-btns{
+    .btn-banner{
+        width: 180px;
+        padding: 15px;
+        background-color: #005957;
+        color: white;
+        border-radius: 4px;
+        font-family: 'PT Sans Caption';
+        font-size: 16px;
+        &:hover{
+            background-color: #6CDDB4;
+        }
+    }
+    .breakpoint-large-down({
+        .btn-banner{
+            width: 169px;
+        }
+    });
+    .breakpoint-small-down({
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .btn-banner{
+            width: 180px;
+            margin-bottom: 20px;
+        }
+    });
+}
+
+.guidelines{
+    .guidelines-content{
+        padding-bottom: 16px;
+        .guidelines-head{
+            color: #005957 !important;
+            font-size: 20px;
+            font-weight: bold !important;
+            font-family: 'PT Sans Caption' !important;
+        }
+    }
+}
+.acc-opt{
+    font-family: 'PT Sans Caption' !important;
+    font-size: 18px;
+    padding-bottom: 20px;
+    p{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .txt-green{
+        font-weight: bold;
+        color:#6CDDB4;
+    }
+}
+.general-contact{
+    p{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}

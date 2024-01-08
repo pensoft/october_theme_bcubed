@@ -232,13 +232,17 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.work_packages .accordion-toggle, .objectives_h .accordion-toggle, .projects_h .accordion-toggle', function () {
+    $('body').on('click', '.work_packages .accordion-toggle, .objectives_h .accordion-toggle, .projects_h .accordion-toggle, .get-there .accordion-toggle, .guidelines .accordion-toggle', function () {
         if ($(this).next(".accordion-content").is(':visible')) {
             $(this).next(".accordion-content").slideUp(300);
             $(this).children(".plusminus").html('<span class="plus"></span>');
+            // $(this).find('.accordion-h').children(".plusminus").html('<span class="plus"></span>');
+            $(this).find('.d-inline-flex').children(".plusminus").html('<span class="plus"></span>');
         } else {
             $(this).next(".accordion-content").slideDown(300);
             $(this).children(".plusminus").html('<span class="minus"></span>');
+            // $(this).find('.accordion-h').children(".plusminus").html('<span class="minus"></span>');
+            $(this).find('.d-inline-flex').children(".plusminus").html('<span class="minus"></span>');
         }
     });
 
