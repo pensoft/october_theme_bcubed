@@ -59,7 +59,7 @@ return Redirect::to('/newsletters');
             <div class="col-md-4 col-xs-12 text-center newsletters-card mb-3">
                 <div class="newsletter-card-image-container" style="background: url({{record.newsletter_image|resize(380, 220,{ mode: 'crop' })}}) center center no-repeat;" title="{{record.name}}"></div>
                 <p class="newsletters-card-date mt-2">{{ record.date|date("F Y") }}</p>
-                <p class="newsletters-card-title " style="min-height: 31px;">{{record.name}}</p>
+                <p class="newsletters-card-title " style="min-height: 50px;">{{record.name}}</p>
                 {% if record.url %}
                 <div class="col-xs-12">
                     <div class="text-center">

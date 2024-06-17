@@ -5,9 +5,6 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 header_image = "about.jpg"
-
-[siteSearchInclude]
-
 ==
 <?php
 use Pensoft\Partners\Models\Partners;
@@ -42,12 +39,8 @@ function onStart(){
     };
 
 }
-
-
 ?>
 ==
-
-{% component 'siteSearchInclude' %}
 {% if is_detail_page %}
 <div class="container">
     <div class="tabs">
