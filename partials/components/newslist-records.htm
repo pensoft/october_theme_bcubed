@@ -1,0 +1,83 @@
+<!-- <div class="row newslist">
+    {% for highlight in records %}
+    <div class="col-xs-12 col-md-3">
+        
+        <div class="row news_column card-column">
+            {% if highlight.cover %}
+            <a class="news-image col-xs-12 center-xs" href="{{'news'|page}}/{{highlight.slug}}">
+                <img class="news-img-top" src="{{highlight.cover.getThumb(250, 250, {'mode': 'crop'})}}">
+            </a>
+            {% else %}
+            <a class="news-image col-xs-12 center-xs" href="{{'news'|page}}/{{highlight.slug}}">
+                <img class="news-img-top" src="{{'pensoft/No_Image_Available.jpg'|media }}" style="height: 250px; width: 250px;">
+            </a>
+            {% endif %}
+            <div class="news-container col-xs-12">
+                <div class="text-published">{{ highlight.published_at|date('d F Y') }}</div>
+                <div class="news-title">
+                    <h3 class="card-title"><a href="{{'news'|page}}/{{highlight.slug}}">{{ highlight.title|length > 69 ? highlight.title|slice(0, 69) ~ '...' : highlight.title  }}</a></h3>
+                </div>
+                <div class="row news-button-card">
+                    <div class="col-xs-12">
+                        <a href="{{'news'|page}}/{{highlight.slug}}" class="btn btn-primary">{{'Read article' |_}}</a>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+    </div>
+
+
+    {% endfor %}
+</div>
+ -->
+{% if records.count > 0 %}
+ <div class="row newslist">
+    {% for highlight in records %}
+    <div class="col-xs-12 col-md-3 news-item item-{{highlight.slug}}">
+        <div class="row news_column">
+            {% if highlight.cover %}
+            <a class="news-image col-xs-12 center-xs" href="{{'news'|page}}/{{highlight.slug}}">
+                <img class="news-img-top" src="{{highlight.cover.getThumb(370, 212, {'mode': 'crop'})}}">
+            </a>
+            {% else %}
+            <a class="news-image col-xs-12 center-xs" href="{{'news'|page}}/{{highlight.slug}}">
+                <img class="news-img-top" src="{{'pensoft/No_Image_Available.jpg'|media }}" style="height: 212px; width: 370px;">
+            </a>
+            {% endif %}
+            <div class="news-container col-xs-12">
+                <div class="text-published">{{ highlight.published_at|date("d M Y") }}</div>
+                <div class="news-title">
+                    <h3 class="card-title"><a href="{{'news'|page}}/{{highlight.slug}}">{{ highlight.title|length > 99 ? highlight.title|slice(0, 99) ~ '...' : highlight.title  }}</a></h3>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="{{'news'|page}}/{{highlight.slug}}" class="btn btn-primary">{{'Read article' |_}}</a>
+                    </div>
+                    <div class="col-xs-6">
+                        {% if allow_share == 'yes' %}
+                            {% if this.theme.twitter %}
+                            <a href="https://twitter.com/intent/tweet?text={{highlight.title_encoded}}{{'news'|page}}/{{highlight.slug}}" target="_blank" class="col-xs col-md-12 btn p-primary pr p-twitter big"></a>
+                            {% endif %}
+                            {% if this.theme.facebook %}
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{'news'|page}}/{{highlight.slug}}&amp;src=sdkpreparse" target="_blank" class="col-xs col-md-12 btn pr p-primary p-facebook big"></a>
+                            {% endif %}
+                            {% if this.theme.linkedin %}
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{'news'|page}}/{{highlight.slug}}" target="_blank" class="col-xs col-md-12 btn pr p-primary p-linkedin big"></a>
+                            {% endif %}
+                        {% endif %}</div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+{% else %}
+<div class="center-xs">
+    <h1>No records founds.</h1>
+</div>
+{% endif %}

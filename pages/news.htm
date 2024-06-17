@@ -6,72 +6,97 @@ robot_index = "index"
 robot_follow = "follow"
 header_image = "header/news.jpg"
 
-[list]
-maxItems = 9
-templates = "template3"
-thumb_width = 370
-thumb_height = 212
-no_records_message = "Stay tuned for upcoming news!"
-
 [related_articles]
 limit = 3
 thumb_width = 228
 thumb_height = 184
 
-[gallery]
 ==
 <?php
+use Pensoft\Articles\Models\Category;
 use Pensoft\Articles\Models\Article;
 
 function urlencode($string){
     return trim(urlencode($string));
 }
+
 function onStart()
 {
-
     $this['article'] = Pensoft\Articles\Models\Article::where('slug', $this->param('id'))->first();
-if($this['article']){
+    $this['categories'] = Category::orderBy('sort_order')->orderBy('created_at', 'desc')->get();
+	
+    $categoryId = input('categoryId', 'all');
 
-$this['is_detail_page'] = $this['article'] ? true : false;
-$this['allow_share'] = $this['article']['allow_share'] == 'yes' ? true : false;
-if($this['is_detail_page']){
-    $seoTitle = $this['article']['title'];
-    $seoKeywords = $this['article']['meta_keywords'] ?: $this['article']['keywords'];
-    $seoDescription = str_limit(Html::strip($this['article']['content']), 255);
-    
-    if (class_exists('\BennoThommo\Meta\Meta')) {
-        if($seoTitle) {
-            \BennoThommo\Meta\Meta::set('title', $seoTitle);
-        }
-        if($seoKeywords) {
-            \BennoThommo\Meta\Meta::set('keywords', $seoKeywords);
-        }
-        if($seoDescription) {
-            \BennoThommo\Meta\Meta::set('description', $seoDescription);
+    if ($categoryId !== 'all' && !is_numeric($categoryId)) {
+        return redirect('news');
+    }
+	
+    $this['categoryId'] = $categoryId;
+
+    if ($categoryId === 'all') {
+        $records = Article::news()->where('published_at', '<=', 'now')
+                                  ->where('published', 'true')
+                                  ->orderBy('published_at', 'DESC')
+                                  ->paginate(12);
+    } else {
+        $records = Article::news()->whereHas('categories', function ($query) use ($categoryId) {
+                     $query->where('id', $categoryId);
+                 })->where('published_at', '<=', 'now')
+                   ->where('published', 'true')
+                   ->orderBy('published_at', 'DESC')
+                   ->paginate(12);
+    }
+
+    if ($categoryId !== 'all') {
+        $records->appends(['categoryId' => $categoryId]);
+    }
+
+    $this['records'] = $records;
+
+
+	
+    if($this['article']){
+
+        $this['is_detail_page'] = $this['article'] ? true : false;
+        $this['allow_share'] = $this['article']['allow_share'] == 'yes' ? true : false;
+		if($this['is_detail_page']){
+			$seoTitle = $this['article']['title'];
+			$seoKeywords = $this['article']['meta_keywords'] ?: $this['article']['keywords'];
+			$seoDescription = str_limit(Html::strip($this['article']['content']), 255);
+	
+			if (class_exists('\BennoThommo\Meta\Meta')) {
+				if($seoTitle) {
+					\BennoThommo\Meta\Meta::set('title', $seoTitle);
+				}
+				if($seoKeywords) {
+					\BennoThommo\Meta\Meta::set('keywords', $seoKeywords);
+				}
+				if($seoDescription) {
+					\BennoThommo\Meta\Meta::set('description', $seoDescription);
+				}
+			}
+		}
+        if($this['is_detail_page'] and $this['allow_share']){
+            $this['page_url'] = $this->pageUrl('');
+            $this['encoded_title'] = urlencode($this['article']['title']);
+            $this['slug'] = $this['article']['slug'];
+            \BennoThommo\Meta\Meta::set('twitter:card', 'summary_large_image');
+            \BennoThommo\Meta\Meta::set('twitter:title', $this['article']['title']);
+            \BennoThommo\Meta\Meta::set('twitter:description', str_limit(Html::strip($this['article']['content']), 255));
+            \BennoThommo\Meta\Meta::set('og:title', $this['article']['title']);
+            \BennoThommo\Meta\Meta::set('og:description', str_limit(Html::strip($this['article']['content']), 255) );
+            \BennoThommo\Meta\Meta::set('og:type', 'article');
+            \BennoThommo\Meta\Meta::set('og:url', $this->pageUrl(''));
+            if($this['article']['cover']){
+                \BennoThommo\Meta\Meta::set('twitter:image', $this['article']['cover']->getThumb(600, null, ['mode' => 'auto']));
+
+                \BennoThommo\Meta\Meta::set('og:image', $this['article']['cover']->getThumb(600, 314, ['mode' => 'crop']));
+                \BennoThommo\Meta\Meta::set('og:image:width', 600);
+                \BennoThommo\Meta\Meta::set('og:image:height', 314);
+            }
+
         }
     }
-}
-if($this['is_detail_page'] and $this['allow_share']){
-$this['page_url'] = $this->pageUrl('');
-$this['encoded_title'] = urlencode($this['article']['title']);
-$this['slug'] = $this['article']['slug'];
-\BennoThommo\Meta\Meta::set('twitter:card', 'summary_large_image');
-\BennoThommo\Meta\Meta::set('twitter:title', $this['article']['title']);
-\BennoThommo\Meta\Meta::set('twitter:description', str_limit(Html::strip($this['article']['content']), 255));
-\BennoThommo\Meta\Meta::set('og:title', $this['article']['title']);
-\BennoThommo\Meta\Meta::set('og:description', str_limit(Html::strip($this['article']['content']), 255) );
-\BennoThommo\Meta\Meta::set('og:type', 'article');
-\BennoThommo\Meta\Meta::set('og:url', $this->pageUrl(''));
-if($this['article']['cover']){
-\BennoThommo\Meta\Meta::set('twitter:image', $this['article']['cover']->getThumb(600, null, ['mode' => 'auto']));
-
-\BennoThommo\Meta\Meta::set('og:image', $this['article']['cover']->getThumb(600, 314, ['mode' => 'crop']));
-\BennoThommo\Meta\Meta::set('og:image:width', 600);
-\BennoThommo\Meta\Meta::set('og:image:height', 314);
-}
-
-}
-}
 }
 ?>
 ==
@@ -100,9 +125,6 @@ if($this['article']['cover']){
 
                     </div>
                 </div>
-
-            {% component 'gallery' %}
-
         </div>
         <div class="col-xs-12 col-md-6 end-md center-xs">
             {% if article.cover %}
@@ -120,10 +142,23 @@ if($this['article']['cover']){
 
     </div>
     {% else %}
-    <div class="row">
-        <div class="col-xs">
-            {% component 'list' %}
-        </div>
+    <div class="container pt-0 mt-0">
+		<div class="category-tabs-container mb-2">
+			{% if categories.count > 0 %}
+			<div class="row category-tabs" id="category-tabs">
+				<a href="{{ 'news'|page }}" class="{{ 'all' == categoryId ? 'active' : '' }}">All News</a>
+				{% for category in categories %}
+				<a href="{{ 'news'|page }}?categoryId={{ category.id }}" class="{{ category.id == categoryId ? 'active' : '' }}">{{ category.name }}</a>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+        <div class="newslist-records" id="newslist-records">
+			{% partial 'components/newslist-records' %}
+		</div>
+		<div class="row container">
+			{{ records.render|raw }}
+		</div>
     </div>
     {% endif %}
 </div>
