@@ -22,6 +22,12 @@ $(document).ready(function() {
         }
     });
 
+    // $('.nav-item').each(function (){
+    //     if($(this).text().trim() == 'Guides & Tutorials'){
+    //         $(this).addClass('hackathon_picker');
+    //     }
+    // });
+
     $("nav").removeClass("no-transition");
 
     $('.work_packages .accordion-content, .partners-insider .accordion-toggle, .messages .accordion-toggle').each(function( index, value ) {
@@ -273,12 +279,6 @@ $(document).ready(function() {
 
         $('.library .btn-primary').html('<i class="pr normal p-download"></i>');
     }
-
-    $('.nav-item').each(function (){
-        if($(this).text().trim() == 'Hackathon'){
-            $(this).addClass('hackathon_picker');
-        }
-    });
 
     $('.hackathon a[href^="#"]').click(function() {
       var target = $(this.hash);
