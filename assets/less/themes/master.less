@@ -1477,40 +1477,66 @@ now override the 3.3 new styles for modern browsers & apply opacity
     a.button{
         background: #6CDDB4 url('../../../../storage/app/media/RIO%20logo%20all%20white-01.svg') center no-repeat;
         background-size: 72px;
-        background-position-x: 20px;
+        background-position-x: center;
         color: white;
         text-align: center;
-        padding: 12px 30px 12px 105px;
+        padding: 12px 0px 12px 0px;
         font-size: 15px;
         border-radius: 4px;
         margin-top: 26px;
         display: inline-block;
         font-family: 'PT SANS CAPTION';
+        width: 150px;
         &:hover{
             background: #005957 url('../../../../storage/app/media/RIO%20logo%20all%20white-01.svg') center no-repeat;
             background-size: 72px;
-        background-position-x: 20px;
+        background-position-x: center;
         }
     }
 
     a.button_zenodo{
         background: #6CDDB4 url('../../../../storage/app/media/zenodo%20logo.svg') center no-repeat;
         background-size: 65px;
-        background-position-x: 20px;
+        background-position-x: center;
         color: white;
         text-align: center;
-        padding: 12px 30px 12px 105px;
+        padding: 12px 0px 12px 0px;
         font-size: 15px;
         border-radius: 4px;
         margin-top: 26px;
         display: inline-block;
         font-family: 'PT SANS CAPTION';
+        width: 150px;
         &:hover{
             background: #005957 url('../../../../storage/app/media/zenodo%20logo.svg') center no-repeat;
             background-size: 65px;
-        background-position-x: 20px;
+        background-position-x: center;
         }
     }
+
+    
+
+    a.button_github{
+        background: #6CDDB4 url('../../../../storage/app/media/github-mark-white.svg') center no-repeat;
+        background-size: 32px;
+        background-position-x: center;
+        color: white;
+        text-align: center;
+        padding: 12px 0px 12px 0px;
+        font-size: 15px;
+        border-radius: 4px;
+        margin-top: 26px;
+        display: inline-block;
+        font-family: 'PT SANS CAPTION';
+        width: 150px;
+        &:hover{
+            background: #005957 url('../../../../storage/app/media/github-mark-white.svg') center no-repeat;
+            background-size: 32px;
+        background-position-x: center;
+        }
+    }
+
+    
 }
 
 
@@ -1625,5 +1651,38 @@ now override the 3.3 new styles for modern browsers & apply opacity
     color: @white-color;
     &:hover{
         color: @link-color;
+    }
+}
+
+.sproject_item{
+    width: 280px;
+    height: 283px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px #0059571A;
+    border-radius: 0px 0px 4px 4px;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    img{
+        width: 218px;
+        height: 101px;
+        object-fit: contain;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .sp_title{
+        color: #4D4D4D;
+        font-size: 23px;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        padding: 30px 0;
+        border-top: 1px solid #EBEBEB;
+        margin: 20px auto;
     }
 }

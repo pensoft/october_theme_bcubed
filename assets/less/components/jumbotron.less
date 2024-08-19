@@ -527,13 +527,23 @@
 }
 
 .policy-list{
+
     .col-xs-12 {
+        height: 324px !important;
         max-width: 338px!important;
         margin: 50px 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        .hidden-text{
+            top: 324px;
+        }
         .text {
 
             &:before {
                 left: 152px;
+                top: 303px;
             }
         }
         h3 {

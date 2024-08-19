@@ -22,6 +22,13 @@ templates = "template3"
 description_limit = 0
 
 [siteSearchInclude]
+
+[jumbotron sprojects]
+jumbotron = "sister-projects"
+title = 1
+background = "transperant"
+templates = "template3"
+description_limit = 0
 ==
 <?php
 use Pensoft\Partners\Models\Partners as Partner;
@@ -106,6 +113,10 @@ function onStart(){
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+{% component 'sprojects' %}
 </div>
 
 
