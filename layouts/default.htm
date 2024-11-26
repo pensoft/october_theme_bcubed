@@ -112,14 +112,26 @@ description_limit = 0
         {% endif %}
     </header>
     {% if this.page.id == 'home' %}
-    <div class="container homepage">
-        <div class="intro" data-aos="fade-right">
-            <div class="logo_main"></div>
+        
+            <div class="container homepage">
+                <div class="intro" data-aos="fade-right">
+                    <div class="logo_main"></div>
 
-            <h1>{{this.theme.tag_line}}</h1>
-            <div class="intro_btn"><a href="{{'about'|page}}">Learn more</a> </div>
-        </div>
-    </div>
+                    <h1>{{this.theme.tag_line}}</h1>
+                    <div class="intro_btn"><a href="{{'about'|page}}">Learn more</a> </div>
+
+                    
+
+                </div>
+            
+                
+            </div>
+            <div class="container temp_banner_container">
+                <div class="temp_banner">
+                    <a href="https://zenodo.org/records/13912947" target="_blank">Read B-Cubed's first policy brief for improved biodiversity monitoring</a>
+                </div>
+            </div>
+            
     {% endif %}
 
 

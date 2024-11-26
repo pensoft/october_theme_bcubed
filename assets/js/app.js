@@ -76,7 +76,10 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 
-   
+    // Rename Technical brief to Policy brief
+    $('.doc_type').filter(function() {
+        return $(this).text() === 'Technical brief';
+    }).text('Policy brief');
 
     // bootstrap 3 breakpoints
     const breakpoint = {
@@ -172,6 +175,8 @@ $(document).ready(function() {
 
     $('.news-container .btn.btn-primary').addClass('read_more').text('Read more ');
     $('.news-container .btn.btn-primary').removeClass('btn-primary');
+
+    $('#mylibraryForm a[data-type="6"]').text('Policy Briefs');
 
     if (width < 1000) { // mobile
         $('.navbar-collapse').remove();
