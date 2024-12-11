@@ -116,7 +116,10 @@ description_limit = 0
                         <a href="{{this.theme.instagram_url}}" target="_blank" class="pr p-instagram big"></a>
                         {% endif %}
                         {% if this.theme.researchgate_url %}
-                        <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate big" style="width: 64px;"></a>
+                        <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate big"></a>
+                        {% endif %}
+                        {% if this.theme.bluesky_url %}
+                        <a href="{{this.theme.bluesky_url}}" target="_blank" class="pr p-bluesky normal"></a>
                         {% endif %}
                         <a href="{{ this.theme.subscribe }}" target="_blank" class="pl p-secondary p-mail normal"></a>
                     </div>

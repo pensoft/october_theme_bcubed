@@ -41,7 +41,10 @@ numberOfLevels = 2
                 <a href="{{this.theme.instagram_url}}" target="_blank" class="pr p-instagram normal"></a>
                 {% endif %}
                 {% if this.theme.researchgate_url %}
-                <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate normal" style="width: 64px;"></a>
+                <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate normal"></a>
+                {% endif %}
+                {% if this.theme.bluesky_url %}
+                <a href="{{this.theme.bluesky_url}}" target="_blank" class="pr p-bluesky small"></a>
                 {% endif %}
                 <a class="pr p-search middle search-btn" onclick="showSearchForm();"></a>
             </li>
