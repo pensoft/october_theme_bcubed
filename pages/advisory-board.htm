@@ -1,0 +1,57 @@
+url = "/advisory-board"
+layout = "default"
+title = "Advisory board"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[siteSearchInclude]
+==
+<?php
+use Pensoft\Cardprofiles\Models\Profiles as Profiles;
+
+function onStart(){
+
+$this['advisory_board'] = Profiles::where('category_id', 4)->get();
+
+}
+?>
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container">
+    <div class="row start-md around-xs partners_list_container partners-advisory">
+        {% for profile in advisory_board %}
+        <div class="col-md-12 col-xs-12 partner-item key_{{k}}" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-2 col-xs-12 start-md center-xs partner_logo">
+                    {% if profile.avatar %}
+                    <img alt="{{ profile.names }}" src="{{profile.avatar.thumb(186,167,{'mode':'crop'})}}">
+                    {% else %}
+                    <img alt="{{ profile.names }}" src="{{'CMS_icons_individuals.svg'|media}}" width="186" height="167" class="no-image">
+                    {% endif %}
+                </div>
+                <div class="col-md-10 col-xs-12 start-md center-xs partner_description">
+                    <h4 class="partner_title">{{ profile.names }}</h4>
+
+                    <div class="partner_content toogle-contact-paragraphs">
+                        <div class="body_c">
+                            {% if profile.email %}
+                            <p align="center"><a href="mailto:{{profile.email}}" class="email" target="_blank">
+                                {{profile.email}}
+                            </a></p>
+                            {% endif %}
+                            {{ profile.content|raw }}
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="read_full"><span>Read more</span><span class="plus"></span></a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endfor %}
+    </div>
+</div>

@@ -299,6 +299,64 @@ $(document).ready(function() {
 		});
 	});
 
+
+
+    $(".partner_description a.read_full").click(function() {
+        var $el, $ps, $up, totalHeight;
+        totalHeight = 155;
+        $el = $(this) // read-more link
+
+        $up  = $el.parent(); // partner_description
+        if ($el.text() == "Read more") {
+
+            $ps = $up.find(".partner_content p, .partner_content ul, .partner_content ol");
+
+            // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+            $ps.each(function() {
+                totalHeight += $(this).outerHeight();
+            });
+
+            $up.addClass('changed');
+
+            $el.css({
+                top: totalHeight - 20
+            });
+            console.log($up.height());
+            $up.css({
+                // Set height to prevent instant jumpdown when max height is removed
+                "height": $up.height() - 20,
+                "max-height": 9999,
+            })
+                .animate({
+                    "height": totalHeight
+                });
+            //Stuff to do when btn is in the read more state
+            $el.html("Read less");
+            // $up.slideDown();
+        } else {
+            $up.removeClass('changed');
+            $el.css({
+                top: 150
+            });
+            $up.css({
+                // Set height to prevent instant jumpdown when max height is removed
+                "height": $up.height(),
+                "max-height": 460,
+            })
+                .animate({
+                    "height": totalHeight
+                });
+            //Stuff to do when btn is in the read less state
+            $el.html("Read more");
+
+            $('html, body').animate({
+                scrollTop:  $up.offset().top - $('header').height()
+            });
+        }
+        return false;
+
+    });
+
 });
 
 function showHideWP(target){

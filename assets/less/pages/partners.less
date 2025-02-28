@@ -82,7 +82,7 @@ g:has(.fill_default){
 
 .partners {
     color: #1B1B2D;
-    
+
     h2 {
         font-size: 30px;
         font-weight: normal;
@@ -90,7 +90,7 @@ g:has(.fill_default){
         color: #1B1B2D;
         text-align: left !important;
         margin: 50px 0;
-        
+
         .breakpoint-large-down({
             text-align: center !important;
         });
@@ -115,7 +115,7 @@ g:has(.fill_default){
             background-color: @link-color;
             transition: left 0.3s, width 0.3s;
         }
-        
+
         a {
             box-sizing: border-box;
             width: fit-content;
@@ -133,7 +133,7 @@ g:has(.fill_default){
                 height: 25px;
                 line-height: 25px;
                 margin-right: 20px;
-                
+
                 &.active {
                     color: @dark-color;
                 }
@@ -143,7 +143,7 @@ g:has(.fill_default){
                 height: 25px;
                 line-height: 25px;
                 margin-left: 20px;
-                
+
                 &.active {
                     color: @dark-color;
                 }
@@ -154,6 +154,7 @@ g:has(.fill_default){
     .tabs + div.row {
         width: 100%;
     }
+
 }
 
 
@@ -362,6 +363,137 @@ g:has(.fill_default){
 
 .active_path{
   animation: blinker 1s linear infinite;
+}
+
+
+.partners-advisory{
+    .partner-item{
+        margin-bottom: 30px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 30px #0059571A;
+        padding: 35px 35px 0 35px!important;
+
+
+        .partner_title{
+            font-size: 21px;
+            line-height: 26px;
+            font-weight: bold;
+            color: #35393E;
+            text-transform: none;
+            font-family: "PT Sans Caption";
+        }
+
+        .row:has(.partner_title ){
+            align-items: start;
+            margin-bottom: 30px;
+        }
+
+        img{
+            width: 186px;
+            max-height: 167px;
+            object-fit: cover;
+            border-radius: 5px;
+            .breakpoint-large-down({
+                max-width: 100%;
+            });
+
+        }
+        padding: 20px;
+        position: relative;
+        //transition: all 0.5s;
+
+
+        .partner_description{
+            padding: 20px;
+            position: relative;
+            margin-top: 0;
+            //transition: all 0.5s;
+
+            .partner_content{
+                height: 85px;
+                //max-height: 460px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s;
+
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    content: "";
+                    background: linear-gradient(to top,
+                    rgba(255,255,255, 1) 0%,
+                    rgba(255,255,255, 0) 100%
+                    );
+                    pointer-events: none; /* so the text is still selectable */
+                }
+
+                ol{
+                    list-style-type:decimal;
+                    padding-left: 20px;
+                }
+            }
+
+
+            a.read_full{
+                position: absolute;
+                top: 150px;
+                left: 20px;
+                color: @dark-color;
+                transition: all ease-in-out 0.5s;
+
+                &:after{
+                    content: ' ';
+                    position: absolute;
+                    margin-left: 7px;
+                    top: 7px;
+                    width: 0;
+                    height: 0;
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent;
+                    border-top: 7px solid @dark-color;
+                }
+            }
+
+
+            &.changed{
+                .partner_content{
+                    height: 100%;
+                    overflow: visible;
+                    background: none;
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        height: 100%;
+                        width: 100%;
+                        content: "";
+                        background: unset;
+                        pointer-events: none; /* so the text is still selectable */
+                    }
+                }
+
+                a.read_full{
+                    &:after{
+                        background-size: 16px;
+                        float: left;
+                        margin-left: 7px;
+                        top: 6px;
+                        width: 0;
+                        height: 0;
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                        border-bottom: 7px solid @dark-color;
+                        border-top: none;
+
+                    }
+                }
+            }
+
+
+        }
+    }
 }
 
 @keyframes blinker {
