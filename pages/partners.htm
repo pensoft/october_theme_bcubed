@@ -16,7 +16,7 @@ function onStart(){
     $this['is_detail_page'] = false;
     if($this->param('code')){
         $country = Country::where('code', $this->param('code'))->where('is_enabled', true)->first();
-        
+
         if($country){
             $this['partners'] =  Partners::whereRaw('country_code ILIKE \'%'.$this->param('code').'%\'')->where('type', 1)->get();
             $this['country'] = $country;
@@ -96,7 +96,7 @@ function onStart(){
 {% else %}
 <div class="container">
     <div class="tabs">
-        <a class="active" href="\partners#all">All partners</a>
+        <a class="" href="\partners#all">All partners</a>
         <a class="" href="\partners#by-country">Partners by country</a>
         <div class="underline"></div>
     </div>

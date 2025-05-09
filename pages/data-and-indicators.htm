@@ -1,0 +1,64 @@
+url = "/data-and-indicators"
+layout = "default"
+title = "Data and Indicators"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron data_and_indicators_intro]
+jumbotron = "data-and-indicators"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron biodiversity_data]
+jumbotron = "data-and-indicators-data"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron biodiversity_indicators]
+jumbotron = "data-and-indicators-indicators"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+
+<!-- Intro -->
+{% component 'data_and_indicators_intro' %}
+
+
+<div class="container tabs">
+    <a class="" href="#data-tab">Data</a>
+    <a class="" href="#indicators-tab">Indicators</a>
+</div>
+
+<div id="data-tab">
+    <!-- Box header -->
+    {% component 'biodiversity_data' %}
+</div>
+
+<div id="indicators-tab">
+    <!-- Data cube text -->
+    {% component 'biodiversity_indicators' %}
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.text').click(function() {
+            $(this).closest('.col-xs-12').toggleClass('toggled');
+            $(this).toggleClass('clicked');
+            $(this).next('.hidden-text').toggleClass('show-hidden-text');
+        });
+    });
+</script>
