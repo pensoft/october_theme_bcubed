@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     $("nav").removeClass("no-transition");
 
-    $('.work_packages .accordion-content, .partners-insider .accordion-toggle, .messages .accordion-toggle').each(function( index, value ) {
+    $('.work_packages .accordion-content, .partners-insider .accordion-toggle, .messages .accordion-toggle, .case-studies-list .accordion-toggle').each(function( index, value ) {
         $(value).find('a').attr( "onclick", "window.open(this.href, '_self');" )
     });
 
@@ -170,6 +170,16 @@ $(document).ready(function() {
             $(this).children(".plusminus").html('<span class="minus"></span>');
             // $(this).find('.accordion-h').children(".plusminus").html('<span class="minus"></span>');
             $(this).find('.d-inline-flex').children(".plusminus").html('<span class="minus"></span>');
+        }
+    });
+
+    $('body').on('click', '.case-studies-list .accordion-toggle', function () {
+        if ($(this).next(".accordion-content").is(':visible')) {
+            $(this).next(".accordion-content").slideUp(300);
+            $(this).children().find(".plusminus").html('<span>Read more</span><span class="plus"></span>');
+        } else {
+            $(this).next(".accordion-content").slideDown(300);
+            $(this).children().find(".plusminus").html('<span>Read less</span><span class="minus"></span>');
         }
     });
 

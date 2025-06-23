@@ -108,7 +108,7 @@
     display: inline-block;
 }
 
-.work_packages, .pilots{
+.work_packages{
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -564,7 +564,7 @@
         background-size: 14px;
         left: -10px;
         top: -3px;
-    } 
+    }
 }
 
 
@@ -654,8 +654,186 @@
         background-size: 22px;
         left: -5px;
         top: -12px;
-    } 
+    }
 }
+
+
+/* *** *** *** */
+/* case studies */
+/* *** *** *** */
+
+
+.case-studies-list{
+
+    .col-xs-12{
+
+        &:nth-of-type(1){
+            .accordion-toggle{
+                &:before{
+                    background: @white-color url("../../assets/images/Regional indicators in Europe.svg") center no-repeat;
+                    background-size: 46px;
+                    content: '';
+                    width: 46px;
+                    height: 46px;
+                    padding: 17px;
+                    box-shadow: 0px 0px 2px #00000029;
+                    border-radius: 4px;
+                }
+
+            }
+        }
+
+        &:nth-of-type(2){
+            .accordion-toggle {
+                &:before {
+                    background: @white-color url("../../assets/images/Biological invasions in South Africa.svg") center no-repeat;
+                    background-size: 46px;
+                    content: '';
+                    width: 46px;
+                    height: 46px;
+                    padding: 17px;
+                    box-shadow: 0px 0px 2px #00000029;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        &:nth-of-type(3){
+            .accordion-toggle {
+                &:before {
+                    background: @white-color url("../../assets/images/Stakeholder-driven case study.svg") center no-repeat;
+                    background-size: 46px;
+                    content: '';
+                    width: 46px;
+                    height: 46px;
+                    padding: 17px;
+                    box-shadow: 0px 0px 2px #00000029;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        &:nth-of-type(4){
+            .accordion-toggle {
+                &:before {
+                    background: @white-color url("../../assets/images/Global and continental biodiversity change.svg") center no-repeat;
+                    background-size: 46px;
+                    content: '';
+                    width: 46px;
+                    height: 46px;
+                    padding: 17px;
+                    box-shadow: 0px 0px 2px #00000029;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+
+.case-studies-list .accordion-border{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 30px #0059571A;
+    border-radius: 4px;
+    padding: 21px;
+    margin-bottom: 20px;
+    //font-family: PT Sans Narrow;
+    .breakpoint-small-down({
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    });
+
+    .col-xs.start-xs{
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: bold;
+        font-family: "PT Sans Narrow";
+        letter-spacing: 0px;
+        color: #1B1B2D;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+}
+
+.case-studies-list .accordion-toggle{
+    background: none;
+    border: none;
+    border-radius: unset;
+    padding: 0;
+    color: #555555;
+    // font-weight: bold;
+    font-size: 18px;
+    .breakpoint-large-down({
+        font-size: 17px;
+    });
+
+}
+.case-studies-list .accordion-content{
+    padding: 20px 0 0 0;
+    line-height: 1.5em!important;
+    animation: rotateX 700ms ease-in-out forwards;
+    transform-origin: top center;
+    opacity: 0;
+    background: @white-color;
+    font-size: 15px;
+    color: #707070;
+    a:not(.btn-primary){
+        color: #48A529;
+    }
+}
+
+.case-studies-list .accordion-content p{
+    .breakpoint-large-down({
+        padding: 0!important;
+        text-align: left!important;
+    });
+}
+
+.case-studies-list .plusminus{
+    width: fit-content;
+    display: flex;
+    cursor: pointer;
+    float: right;
+    align-items: center;
+
+    .breakpoint-large-down({
+        float: unset;
+        margin: 0 auto;
+    });
+    span{
+        font-weight: bold;
+        font-size: 16px;
+        color: @link-text-color;
+    }
+    .plus{
+        //background-size: 16px;
+        float: left;
+        margin-left: 6px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid @link-text-color;
+
+    }
+    .minus{
+        //background: url("../../assets/images/menu-arrow-down.svg") right center no-repeat;
+        //transform: scaleY(-1);
+        //width: 20px;
+        //height: 20px;
+        float: left;
+        margin-left: 6px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid @link-text-color;
+    }
+}
+
+
+
 
 #ui-id-1,
 #ui-id-2,

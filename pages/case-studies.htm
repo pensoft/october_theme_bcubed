@@ -26,6 +26,7 @@ description_limit = 0
 <div class="container pt-0 pb-0">
     {% component 'intro' %}
     {% component 'content' %}
+
 </div>
 
 <script>
@@ -34,11 +35,11 @@ description_limit = 0
         $('.policy-content .text').click(function() {
             // Get the parent column
             var column = $(this).closest('.col-xs-12');
-            
+
             // Toggle the classes
             column.toggleClass('toggled');
             $(this).toggleClass('clicked');
-            
+
             // Find and toggle the hidden text
             var hiddenText = $(this).next('.hidden-text');
             hiddenText.toggleClass('show-hidden-text');
