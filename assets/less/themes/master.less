@@ -174,6 +174,10 @@ p:has(.edit-link){
         align-items: center;
         justify-content: center;
         backdrop-filter: none;
+        //height: 66vh;
+        height: fit-content;
+        z-index: 6;
+        top: 70px;
     });
 
 
@@ -255,7 +259,7 @@ p:has(.edit-link){
     flex-direction: column;
     padding-top: unset!important;
     padding-bottom: unset!important;
-    z-index: 1;
+    z-index: 2;
     padding-left: 0;
     padding-right: 0;
 
@@ -279,16 +283,19 @@ p:has(.edit-link){
             z-index: 10;
             margin-top: 111px;
             .breakpoint-laptop-down({
-                right: 10vw;
-                width: 20vw;
-                height: 20vw;
+                right: 21vw;
+                width: 15vw;
+                height: 15vw;
+            });
+            .breakpoint-huge-down({
+                right: 24vw;
             });
             .breakpoint-large-down({
                 width: 71%;
-                height: 134px;
+                height: 114px;
                 border-radius: 16px;
-                padding: 17px;
-                top: 56vh;
+                padding: 13px;
+                top: 40vh;
                 right: 10vw;
             });
 
@@ -306,8 +313,55 @@ p:has(.edit-link){
                 width: 100%;
                 height: 100%;
             }
+    }
+
+
+    .temp_banner2{
+        width: 234px;
+        height: 234px;
+        border: 1px solid #FFFFFF;
+        border-radius: 16px;
+        padding: 17px;
+        position: absolute;
+
+        right: -25vw;
+        z-index: 10;
+        margin-top: 111px;
+        .breakpoint-laptop-down({
+            right: 1vw;
+            width: 15vw;
+            height: 15vw;
+        });
+        .breakpoint-huge-down({
+            right: 4vw;
+        });
+        .breakpoint-large-down({
+            width: 71%;
+            height: 114px;
+            border-radius: 16px;
+            padding: 13px;
+            top: 63vh;
+            right: 10vw;
+        });
+
+
+        a{
+            background: rgba(108, 221, 180, 0.6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            width: 100%;
+            height: 100%;
         }
+    }
+
 }
+
 
 
 
