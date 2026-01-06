@@ -12,13 +12,15 @@ showProviderBadge = 1
 noResultsMessage = "Your search returned no results."
 visitPageMessage = "Visit page"
 ==
-<div class="container"  style="padding-top: 150px">
+<main class="container" style="padding-top: 150px">
     <div class="row">
         <div class="col-xs">
 
-            <h1 class="base_heading inner-page">Search results for {{ searchResults.query }}</h1>
+            <h1 class="base_heading inner-page">Search results for <span aria-label="search query">{{ searchResults.query }}</span></h1>
 
-            {% component 'searchResults' %}
+            <div role="region" aria-label="Search results" aria-live="polite">
+                {% component 'searchResults' %}
+            </div>
         </div>
     </div>
-</div>
+</main>

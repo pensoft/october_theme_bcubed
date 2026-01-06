@@ -1,9 +1,9 @@
-<h3 class="accordion-toggle folder row" style="margin-bottom: 0;">
+<button class="accordion-toggle folder row" style="margin-bottom: 0;" type="button" aria-expanded="false" aria-controls="accordion-content-7">
 	<div class="col-xs-12">
 		{% if prefix %}
-		<span class="accordion-title-predix hide relative">{{prefix}}</span>
+		<span class="accordion-title-predix hide relative" aria-hidden="true">{{prefix}}</span>
 		{% endif %}
-		<div id="folderName-7">{{title}}</div>
+		<span id="folderName-7">{{title}}</span>
 	</div>
-</h3>
-<div class="accordion-content">{{content|raw}}</div>
+</button>
+<div id="accordion-content-7" class="accordion-content" role="region" aria-labelledby="folderName-7" style="display: none;">{{content|raw}}</div>

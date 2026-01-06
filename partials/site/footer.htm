@@ -82,7 +82,7 @@ description_limit = 0
                 {% if (footer_funds_flag != null or footer_funds_text != '') %}
                 <div class="funding flex-column my-1 my-lg-0 flex-lg-row px-1 align-items-center col-sm col-xs-12">
                     {% if footer_funds_flag %}
-                        <img class="text" src="{{ footer_funds_flag }}" />
+                        <img class="text" src="{{ footer_funds_flag }}" alt="European Union flag - Funded by the European Union" />
                         <span>Funded by<br> the European Union</span>
                     {% endif %}
                 </div>
@@ -94,27 +94,27 @@ description_limit = 0
                     <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a></div>
                     <div class="social-networks">
                         {% if this.theme.twitter_url %}
-                        <a href="{{this.theme.twitter_url}}" target="_blank" class="pr p-twitter normal"></a>
+                        <a href="{{this.theme.twitter_url}}" target="_blank" class="pr p-twitter normal" aria-label="Twitter (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.facebook_url %}
-                        <a href="{{this.theme.facebook_url}}" target="_blank" class="pr p-facebook big"></a>
+                        <a href="{{this.theme.facebook_url}}" target="_blank" class="pr p-facebook big" aria-label="Facebook (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.linkedin_url %}
-                        <a href="{{this.theme.linkedin_url}}" target="_blank" class="pr p-linkedin big"></a>
+                        <a href="{{this.theme.linkedin_url}}" target="_blank" class="pr p-linkedin big" aria-label="LinkedIn (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.youtube_url %}
-                        <a href="{{this.theme.youtube_url}}" target="_blank" class="pr p-youtube big"></a>
+                        <a href="{{this.theme.youtube_url}}" target="_blank" class="pr p-youtube big" aria-label="YouTube (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.instagram_url %}
-                        <a href="{{this.theme.instagram_url}}" target="_blank" class="pr p-instagram big"></a>
+                        <a href="{{this.theme.instagram_url}}" target="_blank" class="pr p-instagram big" aria-label="Instagram (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.researchgate_url %}
-                        <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate big"></a>
+                        <a href="{{this.theme.researchgate_url}}" target="_blank" class="pr p-researchgate big" aria-label="ResearchGate (opens in new tab)"></a>
                         {% endif %}
                         {% if this.theme.bluesky_url %}
-                        <a href="{{this.theme.bluesky_url}}" target="_blank" class="pr p-bluesky normal"></a>
+                        <a href="{{this.theme.bluesky_url}}" target="_blank" class="pr p-bluesky normal" aria-label="BlueSky (opens in new tab)"></a>
                         {% endif %}
-                        <a href="{{ this.theme.subscribe }}" target="_blank" class="pl p-secondary p-mail normal"></a>
+                        <a href="{{ this.theme.subscribe }}" target="_blank" class="pl p-secondary p-mail normal" aria-label="Subscribe to newsletter (opens in new tab)"></a>
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@ description_limit = 0
     </div>
     <!-- Powered by pensoft -->
     <div class="powered-by row between-xs middle-xs">
-    <span>Designed and powered by <a href="https://pensoft.net/" target="_blank">
-    <img class="pensoft_logo" src="{{ 'assets/images/pensoft-logo.svg'|theme }}" /></a>
+    <span>Designed and powered by <a href="https://pensoft.net/" target="_blank" aria-label="Pensoft (opens in new tab)">
+    <img class="pensoft_logo" src="{{ 'assets/images/pensoft-logo.svg'|theme }}" alt="Pensoft logo" /></a>
     </span>
     </div>
 </div>

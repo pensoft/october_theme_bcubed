@@ -117,18 +117,18 @@ function onStart()
                 <div class="row share_container middle-xs">
                     <div class="col-lg-2 col-xs-2 start-xs">Share</div>
                     <div class="col-xs-8">
-                        <a href="http://twitter.com/share?text={{article.title}}&url={{page_url}}" target="_blank" class="btn p-primary pr p-twitter normal"></a>
+                        <a href="http://twitter.com/share?text={{article.title}}&url={{page_url}}" target="_blank" class="btn p-primary pr p-twitter normal" aria-label="Share on Twitter (opens in new tab)"></a>
 
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{page_url}}&amp;src=sdkpreparse" target="_blank" class="btn pr p-primary p-facebook big"></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{page_url}}&amp;src=sdkpreparse" target="_blank" class="btn pr p-primary p-facebook big" aria-label="Share on Facebook (opens in new tab)"></a>
 
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="btn pr p-primary p-linkedin big"></a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{page_url}}" target="_blank" class="btn pr p-primary p-linkedin big" aria-label="Share on LinkedIn (opens in new tab)"></a>
 
                     </div>
                 </div>
         </div>
         <div class="col-xs-12 col-md-6 end-md center-xs">
             {% if article.cover %}
-                <img src="{{ article.cover.thumb(507, auto, { mode: 'crop' }) }}" />
+                <img src="{{ article.cover.thumb(507, auto, { mode: 'crop' }) }}" alt="{{article.title}}" />
             {% endif %}
             <div style="width: 100%; max-width: 507px; float: right">{{article.caption|raw}}</div>
             <div class="related_articles">

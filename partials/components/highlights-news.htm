@@ -17,12 +17,12 @@
 					<div>
 						<div class="news_image_holder">
 							{% if highlight.cover %}
-							<img class="card-img-top" src="{{ highlight.cover|crop_image|resize(338, 218, {'mode': 'crop'}) }}">
+							<img class="card-img-top" src="{{ highlight.cover|crop_image|resize(338, 218, {'mode': 'crop'}) }}" alt="{{highlight.title}}">
 							{% endif %}
 						</div>
 
 						<div class="news_content_holder">
-							<div class="text-published">{{highlight.pretty_published_at}}</div>
+							<time class="text-published" datetime="{{highlight.published_at}}">{{highlight.pretty_published_at}}</time>
 
 							<div class="card-body">
 								{{highlight.content|raw}}

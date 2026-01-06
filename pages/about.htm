@@ -50,27 +50,32 @@ templates = "template5"
 ==
 {% component 'siteSearchInclude' %}
 
-<!-- Background -->
-<div class="container">
+<!-- Background Section -->
+<section class="container" aria-labelledby="background-heading">
+    <div id="background-heading" class="sr-only">Background</div>
     {% component 'background' %}
-</div>
+</section>
 
-<!-- Vision -->
-<div class="container">
+<!-- Vision Section -->
+<section class="container" aria-labelledby="vision-heading">
+    <div id="vision-heading" class="sr-only">Vision</div>
     {% component 'vision' %}
-</div>
+</section>
 
-<!-- Objectives -->
-<div class="container-fluid secondary_background">
+<!-- Objectives Section -->
+<section class="container-fluid secondary_background" aria-labelledby="objectives-heading">
     <div class="container">
+        <div id="objectives-heading" class="sr-only">Objectives</div>
         {% component 'objectives' %}
     </div>
-</div>
+</section>
 
-<!-- Work packages -->
-<div class="container-fluid">
+<!-- Work Packages Section -->
+<section class="container-fluid">
     <div class="container work_packages">
-        <h1 class="section-title">Work Packages</h1>
-        {% component 'work-packages' %}
+        <h1 class="section-title" id="work-packages-heading">Work Packages</h1>
+        <div role="region" aria-labelledby="work-packages-heading">
+            {% component 'work-packages' %}
+        </div>
     </div>
-</div>
+</section>

@@ -85,7 +85,7 @@ return Redirect::to('/media-center/videos');
 					<div class="video-card">
 						<p class="card_title font-weight-bold video-title">{{record.name}}</p>
 						{% if record.file %}
-						<video controls="" width="100%"><source src="{{record.file.path}}" type="video/mp4"></video>
+						<video controls="" width="100%" aria-label="Video: {{record.name}}"><source src="{{record.file.path}}" type="video/mp4">Your browser does not support the video tag.</video>
 		
 						<p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>
 		
@@ -94,14 +94,14 @@ return Redirect::to('/media-center/videos');
 						{% endif %}
 		
 						{% if record.youtube_url %}
-						<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
+						<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320" title="YouTube video: {{record.name}}"></iframe>
 		
 						<p>&nbsp;</p>
 						{% endif %}
 		
 						{% if record.vimeo_url %}
 						<iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								src="{{record.vimeo_url}}">
+								src="{{record.vimeo_url}}" title="Vimeo video: {{record.name}}">
 						</iframe>
 						<p>&nbsp;</p>
 						{% endif %}

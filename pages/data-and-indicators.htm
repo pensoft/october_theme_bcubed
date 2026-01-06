@@ -34,17 +34,17 @@ description_limit = 0
 {% component 'data_and_indicators_intro' %}
 
 
-<div class="container tabs">
-    <a class="" href="#data-tab">Data</a>
-    <a class="" href="#indicators-tab">Indicators</a>
+<div class="container tabs" role="tablist" aria-label="Data and Indicators">
+    <a id="data-tab-btn" class="tab-button" href="#data-tab" role="tab" aria-selected="true" aria-controls="data-tab">Data</a>
+    <a id="indicators-tab-btn" class="tab-button" href="#indicators-tab" role="tab" aria-selected="false" aria-controls="indicators-tab">Indicators</a>
 </div>
 
-<div id="data-tab">
+<div id="data-tab" role="tabpanel" aria-labelledby="data-tab-btn" aria-hidden="false">
     <!-- Box header -->
     {% component 'biodiversity_data' %}
 </div>
 
-<div id="indicators-tab">
+<div id="indicators-tab" role="tabpanel" aria-labelledby="indicators-tab-btn" aria-hidden="true" style="display: none;">
     <!-- Data cube text -->
     {% component 'biodiversity_indicators' %}
 </div>
@@ -55,6 +55,22 @@ description_limit = 0
 
 <script>
     $(document).ready(function() {
+        // Tab switching functionality
+        $('.tabs a[role="tab"]').on('click', function(e) {
+            e.preventDefault();
+            var tabId = $(this).attr('aria-controls');
+            var tabBtn = $(this);
+
+            // Update tab buttons
+            $('.tabs a[role="tab"]').attr('aria-selected', 'false');
+            tabBtn.attr('aria-selected', 'true');
+
+            // Update tab panels
+            $('div[role="tabpanel"]').attr('aria-hidden', 'true').css('display', 'none');
+            $('#' + tabId).attr('aria-hidden', 'false').css('display', 'block');
+        });
+
+        // Text toggle functionality (for expandable content within tabs)
         $('.text').click(function() {
             $(this).closest('.col-xs-12').toggleClass('toggled');
             $(this).toggleClass('clicked');

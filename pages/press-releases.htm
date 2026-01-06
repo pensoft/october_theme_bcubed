@@ -55,7 +55,7 @@ function onStart(){
                 <div class="body">{{record.description | raw}}</div>
                 <div class="row link">
                     {% for link in record.link %}
-                    <a href="{{link.url}}" target="_blank" class="btn btn-primary">{{link.text}}</a>
+                    <a href="{{link.url}}" target="_blank" class="btn btn-primary" aria-label="{{link.text}} (opens in new tab)">{{link.text}}</a>
                     {% endfor %}
                 </div>
             </div>

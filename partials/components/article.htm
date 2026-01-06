@@ -2,7 +2,7 @@
 id, url, title, cover, published_at, content
 -->
 
-<div class="article category-{{category}} article-{{id}}">
+<article class="article category-{{category}} article-{{id}}">
     <div class="article-cover">
         <a href="{{url}}" title="{{title}}">
             <img src="{{cover}}" alt="{{title}}"/>
@@ -13,14 +13,14 @@ id, url, title, cover, published_at, content
             <h2 class="article-title">
                 <a href="{{url}}" class="article-link">{{title}}</a>
             </h2>
-            <div class="article-share">
-                <div>share</div>
-                <div class="icons">
-                    
+            <div class="article-share" role="toolbar" aria-label="Share article">
+                <span aria-label="Share this article" class="sr-only">Share</span>
+                <div class="icons" aria-hidden="true">
+
                 </div>
             </div>
         </div>
-        <div class="article-published">{{published_at}}</div>
+        <time class="article-published" datetime="{{published_at}}">{{published_at}}</time>
         <div class="article-content">{{content|raw}}</div>
     </div>
-</div>
+</article>

@@ -43,26 +43,26 @@ function onStart(){
 ==
 {% if is_detail_page %}
 <div class="container">
-    <div class="tabs">
-        <a class="active" href="\partners#all">All partners</a>
-        <a class="" href="\partners#by-country">Partners by country</a>
-        <div class="underline"></div>
+    <div class="tabs" role="tablist" aria-label="Partners">
+        <a id="all-tab-btn" class="active tab-button" href="#all" role="tab" aria-selected="true" aria-controls="all">All partners</a>
+        <a id="by-country-tab-btn" class="tab-button" href="#by-country" role="tab" aria-selected="false" aria-controls="by-country">Partners by country</a>
+        <div class="underline" aria-hidden="true"></div>
     </div>
 
     <h2>{{country.name}}</h2>
     {% for partner in partners %}
     <div class="col-xs-12 partner-item">
         <div class="row">
-            <div class="col-xs-12 col-md-2 start-md center-xs partner_cover"><img src="{{partner.cover.thumb(119, auto, {mode: 'crop'})}}"></div>
+            <div class="col-xs-12 col-md-2 start-md center-xs partner_cover"><img src="{{partner.cover.thumb(119, auto, {mode: 'crop'})}}" alt="{{partner.instituion}} logo"></div>
             <div class="col-xs-12 col-md-8 start-md center-xs partner_title">{{partner.instituion}}</div>
-            <div class="col-xs-12 col-md-2 end-md start-xs partner_link"><a href="{{partner.instituion_url}}" class="visit-webite btn btn-primary" target="_blank">Visit website</a></div>
+            <div class="col-xs-12 col-md-2 end-md start-xs partner_link"><a href="{{partner.instituion_url}}" class="visit-webite btn btn-primary" target="_blank" aria-label="Visit {{partner.instituion}} website (opens in new tab)">Visit website</a></div>
             <div class="col-xs-12 partner_description">{{partner.content|raw}}</div>
         </div>
         {% if insider_members.getIM(partner.id).count > 0 %}
         <div id="accordion-insider-members-list-{{partner.id}}" class="partners-insider">
             <div class="accordion-border">
                 <div class="row middle-xs accordion-toggle">
-                    <span class="plusminus"><span>Show members</span><div class="plus"></div></span>
+                    <span class="plusminus"><span>Show members</span><div class="plus" aria-hidden="true"></div></span>
                 </div>
                 <div class="accordion-content" style="display: none;">
                     <div class="row top-xs">
@@ -95,13 +95,13 @@ function onStart(){
 
 {% else %}
 <div class="container">
-    <div class="tabs">
-        <a class="" href="\partners#all">All partners</a>
-        <a class="" href="\partners#by-country">Partners by country</a>
-        <div class="underline"></div>
+    <div class="tabs" role="tablist" aria-label="Partners">
+        <a id="all-tab-btn" class="tab-button" href="#all" role="tab" aria-selected="false" aria-controls="all">All partners</a>
+        <a id="by-country-tab-btn" class="tab-button" href="#by-country" role="tab" aria-selected="false" aria-controls="by-country">Partners by country</a>
+        <div class="underline" aria-hidden="true"></div>
     </div>
 
-    <div id="by-country">
+    <div id="by-country" role="tabpanel" aria-labelledby="by-country-tab-btn" aria-hidden="true" style="display: none;">
         <div class="row countries_list">
             {% for country in countries %}
             <div class="col-md-2 col-sm-6 col-xs-12 country-item">
@@ -117,20 +117,20 @@ function onStart(){
         </div>
     </div>
 
-    <div id="all" class="accordion-insider-members-list">
+    <div id="all" class="accordion-insider-members-list" role="tabpanel" aria-labelledby="all-tab-btn" aria-hidden="false">
         {% for partner in partners %}
         <div class="col-xs-12 partner-item">
             <div class="row">
-                <div class="col-xs-12 col-md-2 start-md center-xs partner_cover"><img src="{{partner.cover.thumb(119, auto, {mode: 'crop'})}}"></div>
+                <div class="col-xs-12 col-md-2 start-md center-xs partner_cover"><img src="{{partner.cover.thumb(119, auto, {mode: 'crop'})}}" alt="{{partner.instituion}} logo"></div>
                 <div class="col-xs-12 col-md-8 start-md center-xs partner_title">{{partner.instituion}}</div>
-                <div class="col-xs-12 col-md-2 end-md start-xs partner_link"><a href="{{partner.instituion_url}}" class="btn btn-primary" target="_blank">Visit website</a></div>
+                <div class="col-xs-12 col-md-2 end-md start-xs partner_link"><a href="{{partner.instituion_url}}" class="btn btn-primary" target="_blank" aria-label="Visit {{partner.instituion}} website (opens in new tab)">Visit website</a></div>
                 <div class="col-xs-12 partner_description">{{partner.content|raw}}</div>
             </div>
             {% if insider_members.getIM(partner.id).count > 0 %}
             <div id="accordion-insider-members-list-{{partner.id}}" class="partners-insider">
                 <div class="accordion-border">
                     <div class="row middle-xs accordion-toggle">
-                        <span class="plusminus"><span>Show members</span><div class="plus"></div></span>
+                        <span class="plusminus"><span>Show members</span><div class="plus" aria-hidden="true"></div></span>
                     </div>
                     <div class="accordion-content" style="display: none;">
                         <div class="row top-xs">
@@ -167,7 +167,7 @@ function onStart(){
 <script>
 $(document).ready(function() {
     function updateUnderline() {
-        var $activeTab = $('.tabs a.active');
+        var $activeTab = $('.tabs a[aria-selected="true"]');
 
         if ($activeTab.length) {
             var activeWidth = $activeTab.outerWidth();
@@ -189,10 +189,24 @@ $(document).ready(function() {
 
     updateUnderline();
 
-    $('.tabs a').on('click', function(e) {
+    // Tab switching with ARIA support
+    $('.tabs a[role="tab"]').on('click', function(e) {
         e.preventDefault();
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
+        var tabId = $(this).attr('aria-controls');
+
+        // Update tab buttons
+        $('.tabs a[role="tab"]').attr('aria-selected', 'false').removeClass('active');
+        $(this).attr('aria-selected', 'true').addClass('active');
+
+        // Update tab panels
+        $('div[role="tabpanel"]').attr('aria-hidden', 'true').css('display', 'none');
+        $('#' + tabId).attr('aria-hidden', 'false').css('display', 'block');
+
+        updateUnderline();
+    });
+
+    // Handle window resize
+    $(window).on('resize', function() {
         updateUnderline();
     });
 });

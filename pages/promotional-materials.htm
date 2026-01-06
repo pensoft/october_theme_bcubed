@@ -66,16 +66,16 @@ return Redirect::to('/promotional-materials');
         {% if record.flyer_image %}
         <div class="col-md-4 col-xs-12 center-xs">
             <h3><b>{{record.name}}</b></h3>
-            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 268, { mode: 'crop' }) }}" title="{{record.name}}"></p>
+            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 268, { mode: 'crop' }) }}" alt="{{record.name}}" title="{{record.name}}"></p>
 
             {% if record.file %}
             <div class="col-xs-12">
                 <div class="text-center">
                     {% if record.file %}
-                    <a href="{{record.file.path}}#file_name={{record.file.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank">Download</a> &nbsp;
+                    <a href="{{record.file.path}}#file_name={{record.file.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank" aria-label="Download {{record.name}} (opens in new tab)">Download</a> &nbsp;
                     {% endif %}
                     {% if record.file_print %}
-                    <a href="{{record.file_print.path}}#file_name={{record.file_print.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank">Download for print</a> &nbsp;
+                    <a href="{{record.file_print.path}}#file_name={{record.file_print.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank" aria-label="Download {{record.name}} for print (opens in new tab)">Download for print</a> &nbsp;
                     {% endif %}
                 </div>
             </div>

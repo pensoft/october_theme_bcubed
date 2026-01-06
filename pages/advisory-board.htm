@@ -37,14 +37,14 @@ $this['advisory_board'] = Profiles::where('category_id', 4)->get();
                     <div class="partner_content toogle-contact-paragraphs">
                         <div class="body_c">
                             {% if profile.email %}
-                            <p align="center"><a href="mailto:{{profile.email}}" class="email" target="_blank">
+                            <p><a href="mailto:{{profile.email}}" class="email">
                                 {{profile.email}}
                             </a></p>
                             {% endif %}
                             {{ profile.content|raw }}
                         </div>
                     </div>
-                    <a href="javascript:void(0);" class="read_full"><span>Read more</span><span class="plus"></span></a>
+                    <button type="button" class="read_full" aria-label="Read more about {{ profile.names }}"><span>Read more</span><span class="plus" aria-hidden="true"></span></button>
 
                 </div>
             </div>

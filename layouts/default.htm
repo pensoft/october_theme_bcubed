@@ -28,7 +28,7 @@ description_limit = 0
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% component 'SeoCmsPage' %}
     {% if this.theme.site_icon %}
-    <link rel="icon" type="{{this.theme.site_icon.getContentType()}}" href="{{this.theme.site_icon.getPath()}}">
+    <link rel="icon" type="{{this.theme.site_icon.getContentType()}}" href="{{this.theme.site_icon.getPath()}}" alt="">
     {% endif %}
 
     <link href="{{ ['assets/less/theme.less']|theme }}" rel="stylesheet">
@@ -117,17 +117,17 @@ description_limit = 0
                     <div class="row middle-xs">
                         <div class="col-md-7 col-xs-12">
                             <h1>{{this.theme.tag_line}}</h1>
-                            <div class="intro_btn"><a href="{{'about'|page}}">Learn more</a> </div>
+                            <div class="intro_btn"><button type="button" class="btn" onclick="window.location.href='{{'about'|page}}';">Learn more</button> </div>
                         </div>
                         <div class="col-md-5 col-xs-12">
 
                             <div class="container temp_banner_container">
                                 <div class="temp_banner">
-                                    <a href="https://www.gbif.org/news/5PapgYCsbHPe7UWmEQTc5a/better-than-the-original-new-sql-based-service-enables-download-of-occurrence-data-cubes" target="_blank">Test the GBIF<br> download of<br> data cubes</a>
+                                    <a href="https://www.gbif.org/news/5PapgYCsbHPe7UWmEQTc5a/better-than-the-original-new-sql-based-service-enables-download-of-occurrence-data-cubes" target="_blank" aria-label="Test the GBIF download of data cubes (opens in new tab)">Test the GBIF<br> download of<br> data cubes</a>
                                 </div>
 
                                 <div class="temp_banner2">
-                                    <a href="{{'BIODIVERSITY-DATA-AND-ONGOING-MONITORING.pdf'|media}}" target="_blank">Read B-Cubed's feature on biodiversity data and ongoing monitoring</a>
+                                    <a href="/news/save-date-hands-training-transforming-biodiversity-observations-insights" aria-label="Join B-Cubed's hands-on training in transforming biodiversity observations into insights (opens in new tab)">Join B-Cubed's hands-on training in transforming biodiversity observations into insights</a>
                                 </div>
                             </div>
 
@@ -141,10 +141,10 @@ description_limit = 0
 
 
     <!-- Content -->
-    <section id="layout-content" class="{{this.page.id}}" >
+    <main id="layout-content" class="{{this.page.id}}" >
         {% page %}
         {% component 'googleTracker' %}
-    </section>
+    </main>
 </div>
 {% if this.theme.enable_footer %}
 <!-- Footer -->

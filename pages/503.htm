@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ 'pensoft.maintenance::lang.responses.view.title'|trans }} | {{ app_name }}</title>
+    <title>Maintenance - {{ app_name }}</title>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700&display=swap" rel="stylesheet">
     <style>
         html, body {
@@ -62,16 +62,16 @@
     </style>
 </head>
 <body ontouchstart="" class="layout-maintenance">
-    <div class="wrapper">
+    <main class="wrapper" role="main">
         <div class="content">
-            <div class="title">
+            <h1 class="title" role="status" aria-live="assertive">
                 {{- 'pensoft.maintenance::lang.responses.view.title'|trans -}}
-            </div>
-            <div class="message">
+            </h1>
+            <p class="message">
                 {{- 'pensoft.maintenance::lang.responses.view.message'|trans -}}
-            </div>
+            </p>
         </div>
-    </div>
+    </main>
 </body>
 </html>
 {% endapply %}
