@@ -15,7 +15,13 @@ escape = 1
 id = 1
 
 [jumbotron]
-jumbotron = "intro"
+jumbotron = "homepage-intro"
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[jumbotron jumbotron2]
+jumbotron = "popup-info-homepage"
 background = "transperant"
 templates = "template3"
 description_limit = 0
@@ -41,6 +47,7 @@ description_limit = 0
     {% if this.page.id == 'home' %}
     <script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/anime.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap/js/modal.js'|theme  }}"></script>
     {% endif %}
     <script src="{{ 'assets/js/popper.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/tippy-bundle.umd.min.js'|theme}}"></script>
@@ -87,7 +94,7 @@ description_limit = 0
     <!-- End Google Tag Manager -->
 </head>
 
-<body>
+<body {% if this.page.id == 'home' %} onload="openJoinModalBtn();" {% endif %}>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ4DHHL"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -142,6 +149,22 @@ description_limit = 0
 
     <!-- Content -->
     <section id="layout-content" class="{{this.page.id}}" >
+        {% if this.page.id == 'home' %}
+        <!-- popup markup -->
+        <a data-toggle="modal" href="#content-confirmation" class="openJoinModalBtn" style="display: none;">Launch Training dialog</a>
+
+        <div class="control-popup modal fade joinModal" id="content-confirmation" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content center-xs">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<!--                    <img src="{{'pop-up image.png'|media}}" alt="Featured image for COP16 LOGO" role="img">-->
+                    
+{% component 'jumbotron2' %}
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
         {% page %}
         {% component 'googleTracker' %}
     </section>
