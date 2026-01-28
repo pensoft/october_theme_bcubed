@@ -367,6 +367,16 @@ $(document).ready(function() {
 
     });
 
+    // Adjust the selector to match your modal's close button/event
+    $(document).on('click', '.joinModal .close, .joinModal [data-dismiss="modal"]', function() {
+        setCookie('joinModalClosed', 'true', 30);
+    });
+
+    // Or if using Bootstrap modal events
+    $('.joinModal').on('hidden.bs.modal', function() {
+        setCookie('joinModalClosed', 'true', 30);
+    });
+
 });
 
 
