@@ -377,6 +377,40 @@ $(document).ready(function() {
         setCookie('joinModalClosed', 'true', 30);
     });
 
+    // Training series modal
+    $('[data-toggle="modal"][href="#trainingSeriesModal"]').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('#trainingSeriesModal').addClass('in');
+        $('body').addClass('modal-open');
+    });
+
+    $(document).on('click', '#trainingSeriesModal .close', function() {
+        $('#trainingSeriesModal').removeClass('in');
+        $('body').removeClass('modal-open');
+    });
+
+    $(document).on('click', '#trainingSeriesModal', function(e) {
+        if ($(e.target).is('#trainingSeriesModal')) {
+            $('#trainingSeriesModal').removeClass('in');
+            $('body').removeClass('modal-open');
+        }
+    });
+
+    // Training accordion
+    $(document).on('click', '.training-accordion-toggle', function() {
+        var $content = $(this).next('.training-accordion-content');
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $content.slideUp(250);
+        } else {
+            $('.training-accordion-toggle').removeClass('active');
+            $('.training-accordion-content').slideUp(250);
+            $(this).addClass('active');
+            $content.slideDown(250);
+        }
+    });
+
 });
 
 

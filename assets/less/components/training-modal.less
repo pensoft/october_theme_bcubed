@@ -1,0 +1,232 @@
+.training-series-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 45, 44, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99999999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-dialog {
+        width: 92vw;
+        max-width: 680px;
+        margin: 30px auto;
+        position: relative;
+
+        .breakpoint-medium-down({
+            width: 96vw;
+            margin: 12px auto;
+        });
+    }
+
+    .modal-content {
+        background: #fff;
+        border-radius: 14px;
+        border: none;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    // Close button
+    .close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        font-size: 22px;
+        color: #005957;
+        opacity: 0.5;
+        z-index: 2;
+        text-shadow: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        border-radius: 50%;
+        padding: 0;
+        transition: all 0.15s ease;
+
+        &:hover {
+            opacity: 1;
+            background: #F2FBFA;
+        }
+    }
+
+    // Header
+    .training-modal-header {
+        padding: 30px 35px 20px;
+        text-align: center;
+        border-bottom: 1px solid #E4EFE9;
+
+        .breakpoint-medium-down({
+            padding: 24px 20px 16px;
+        });
+
+        h3 {
+            font-size: 21px;
+            margin: 0 0 6px 0;
+            color: #005957;
+            font-weight: 700;
+
+            &::before {
+                display: none;
+            }
+
+            .breakpoint-medium-down({
+                font-size: 18px;
+            });
+        }
+
+        p {
+            margin: 0;
+            color: #6CDDB4;
+            font-size: 13px;
+        }
+    }
+
+    // Accordion body
+    .training-modal-body {
+        padding: 0;
+        max-height: 60vh;
+        overflow-y: auto;
+
+        .breakpoint-medium-down({
+            max-height: 68vh;
+        });
+    }
+
+    // Accordion item
+    .training-accordion-item {
+        border-bottom: 1px solid #E4EFE9;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    // Accordion toggle
+    .training-accordion-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 35px;
+        cursor: pointer;
+        transition: background 0.15s ease;
+        user-select: none;
+
+        .breakpoint-medium-down({
+            padding: 15px 20px;
+        });
+
+        &:hover {
+            background: #F8FCFB;
+        }
+
+        .session-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2a2a2a;
+            flex: 1;
+            line-height: 1.4;
+            padding-right: 40px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                background: url("../../assets/images/chevron-down.svg") center center no-repeat;
+                background-size: 20px 20px;
+                transition: transform 0.25s ease;
+            }
+
+            .breakpoint-medium-down({
+                font-size: 14px;
+            });
+        }
+
+        // Active state
+        &.active {
+            .session-title {
+                color: #005957;
+                font-weight: 700;
+
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    // Accordion content
+    .training-accordion-content {
+        display: none;
+        padding: 0 35px 20px;
+
+        .breakpoint-medium-down({
+            padding: 0 20px 16px;
+        });
+
+        .session-description {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.55;
+            margin: 0 0 16px 0;
+        }
+
+        .session-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            a {
+                display: inline-block;
+                padding: 7px 20px;
+                border-radius: 5px;
+                font-size: 13px;
+                font-weight: 600;
+                text-decoration: none;
+                white-space: nowrap;
+                background: #6CDDB4;
+                color: #005957;
+                text-align: center;
+                transition: all 0.15s ease;
+
+                &:hover {
+                    background: #005957;
+                    color: #fff;
+                }
+
+                &.disabled {
+                    opacity: 0.3;
+                    pointer-events: none;
+                    background: #ddd;
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+}
