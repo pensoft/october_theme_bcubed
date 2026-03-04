@@ -109,6 +109,9 @@ return Redirect::to('/media-center/videos');
 				</div>
 				{% endfor 	%}
 			</div>
+			<div class="row container">
+				{{ records.render|raw }}
+			</div>
 		</div>
 </div>
 {% endif %}
