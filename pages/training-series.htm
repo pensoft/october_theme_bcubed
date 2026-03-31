@@ -1,0 +1,21 @@
+url = "/training-series"
+layout = "default"
+title = "Hands-on Training Series"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron content]
+jumbotron = "training-series"
+title = 0
+background = "transperant"
+templates = "template3"
+description_limit = 0
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+
+<div class="container training-series-page">
+    {% component 'content' %}
+</div>
