@@ -411,6 +411,20 @@ $(document).ready(function() {
         }
     });
 
+    // Training series standalone page accordion
+    $(document).on('click', '.training-series-toggle', function() {
+        var $content = $(this).next('.training-series-content');
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $content.slideUp(250);
+        } else {
+            $('.training-series-toggle').removeClass('active');
+            $('.training-series-content').slideUp(250);
+            $(this).addClass('active');
+            $content.slideDown(250);
+        }
+    });
+
 });
 
 
