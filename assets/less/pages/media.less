@@ -265,15 +265,18 @@
     }
 }
 
+.media-tabs{
+    padding-bottom: 0;
+}
+
 .media-tabs .tabs{
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-bottom: 0;
     width: 100%;
-    display: block;
-    float: left;
+    display: flex;
+    flex-wrap: wrap;
     .breakpoint-large-down({
         width: 60%;
-        margin: 70px auto;
+        margin: 30px auto 0;
     });
 
     a{

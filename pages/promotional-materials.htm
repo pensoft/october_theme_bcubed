@@ -5,92 +5,95 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[builderList mediaFlyersList]
-modelClass = "pensoft\Media\Models\Flyers"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "name"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
-
 [siteSearchInclude]
 ==
 <?php
+use Pensoft\Media\Models\Category;
 use Pensoft\Media\Models\Flyers;
 use System\Models\File;
 
 function onStart(){
-	$this['mediaFlyersList'] =  Flyers::get();
+	$this['categories'] = Category::orderBy('sort_order')
+		->whereHas('flyers')
+		->with(['flyers' => function($query){
+			$query->orderBy('sort_order');
+		}])
+		->get()
+		->map(function($category){
+			$category->slug = str_slug($category->name);
+			return $category;
+		});
+
+	$this['flyers'] = Flyers::orderBy('sort_order')->get();
+
 	if(get('download')){
 		$file = File::find((int)get('download'));
 		$file_name = $file->getLocalPath();
-$recordName = get('file_name') ? get('file_name') : 'ForestPaths_flyer';
-$ext= $file->getExtension();
+		$recordName = get('file_name') ? get('file_name') : 'b-cubed_flyer';
+		$ext = $file->getExtension();
 
-if (file_exists($file_name)) {
-header('Content-Description: File Transfer');
-header('Content-Type: application/octet-stream');
-header("Content-Type: application/force-download");
-header('Content-Disposition: attachment; filename='.$recordName .'.'. $ext);
-header('Content-Transfer-Encoding: binary');
-header('Expires: 0');
-header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-header('Pragma: public');
-header('Content-Length: ' . filesize($file_name));
-ob_clean();
-flush();
-readfile($file_name);
-exit();
-}
-return Redirect::to('/promotional-materials');
-}
-
+		if (file_exists($file_name)) {
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header("Content-Type: application/force-download");
+			header('Content-Disposition: attachment; filename='.$recordName .'.'. $ext);
+			header('Content-Transfer-Encoding: binary');
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file_name));
+			ob_clean();
+			flush();
+			readfile($file_name);
+			exit();
+		}
+		return Redirect::to('/project-materials');
+	}
 }
 ?>
 ==
 {% component 'siteSearchInclude' %}
-<div class="container flyer">
-    <div class="row">
-        {% set records = mediaFlyersList %}
-        {% set displayColumn = mediaFlyersList.displayColumn %}
-        {% set noRecordsMessage = mediaFlyersList.noRecordsMessage %}
-        {% set detailsPage = mediaFlyersList.detailsPage %}
-        {% set detailsKeyColumn = mediaFlyersList.detailsKeyColumn %}
-        {% set detailsUrlParameter = mediaFlyersList.detailsUrlParameter %}
 
-        {% for record in records %}
-        {# Use spaceless tag to remove spaces inside the A tag. #}
-        {% spaceless %}
-        {% if record.flyer_image %}
-        <div class="col-md-4 col-xs-12 center-xs">
-            <h3><b>{{record.name}}</b></h3>
-            <p class="logo_container"><img src="{{ record.flyer_image.thumb(auto, 268, { mode: 'crop' }) }}" title="{{record.name}}"></p>
-
-            {% if record.file or record.url %}
-            <div class="col-xs-12">
-                <div class="text-center">
-                    {% if record.url %}
-                    <a href="{{ record.url }}" title="{{record.name}}" class="btn btn-primary" target="_blank" rel="noopener">Zenodo</a> &nbsp;
-                    {% elseif record.file %}
-                    <a href="{{record.file.path}}#file_name={{record.file.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank">Download</a> &nbsp;
-                    {% endif %}
-                    {% if record.file_print %}
-                    <a href="{{record.file_print.path}}#file_name={{record.file_print.file_name}}" title="{{record.name}}" class="btn btn-primary" target="_blank">Download for print</a> &nbsp;
-                    {% endif %}
-                </div>
-            </div>
-            {% endif %}
-
-        </div>
-
-
-        {% endif %}
-
-        {% endspaceless %}
-        {% else %}
-        {{ noRecordsMessage }}
+{% if categories.count %}
+<div class="container media-tabs">
+    <div class="tabs">
+        <a class="" href="#all-materials">All materials</a>
+        {% for category in categories %}
+        <a class="" href="#{{ category.slug }}">{{ category.name }}</a>
         {% endfor %}
     </div>
 </div>
+
+<div id="all-materials">
+    <div class="container flyer">
+        <div class="row">
+            {% for record in flyers %}
+            {% partial 'components/card-flyer' record=record %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% for category in categories %}
+<div id="{{ category.slug }}">
+    <div class="container flyer">
+        <div class="row">
+            {% for record in category.flyers %}
+            {% partial 'components/card-flyer' record=record %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+<div class="container flyer">
+    <div class="row">
+        {% for record in flyers %}
+        {% partial 'components/card-flyer' record=record %}
+        {% else %}
+        No records found
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

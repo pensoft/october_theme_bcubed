@@ -234,7 +234,7 @@ $(document).ready(function() {
         $('.projects_h .key_0, .projects_h .key_2, .projects_h .key_4, .projects_h .key_6, .projects_h .key_8, .projects_h .key_10, .projects_h .key_12').wrapAll('<div class="col-md-6 col-xs-12" />');
     }
 
-    $('.partners .tabs, .data-and-indicators .tabs').each(function(){
+    $('.partners .tabs, .data-and-indicators .tabs, .promotional-materials .tabs').each(function(){
 		// For each set of tabs, we want to keep track of
 		// which tab is active and its associated content
 		var $active, $content, $links = $(this).find('a');
@@ -249,6 +249,10 @@ $(document).ready(function() {
         }
 
         if($(this).parent().parent().hasClass('data-and-indicators')){
+            $active.addClass('active');
+        }
+
+        if($(this).parent().parent().hasClass('promotional-materials')){
             $active.addClass('active');
         }
 
